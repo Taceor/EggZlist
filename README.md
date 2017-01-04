@@ -23,7 +23,7 @@ Built using the Flask micro-framework for Python.
 
 6) Run the server
 
-    sudo./run.py
+    sudo ./run.py
 
 ###**BOOM** just like that, you're done.
 
