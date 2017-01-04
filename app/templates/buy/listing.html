@@ -1,0 +1,79 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="buy-layout">
+  <div class="buy-spacing-listing">
+    <a href="/buy">
+      <button name="button" class="back-search">
+        <p class="back-button"><i class="fa fa-arrow-left search-arrow"></i>Back to listings</p>
+      </button>
+    </a>
+    <div class="row listing-info">
+      <p><em>posted by <a href="{{ url_for('profile', username=item.user.username) }}">{{ item.user.username }}</a></em></p>
+    {% if days == 0 %}
+      <p>Posted today!</p>
+    {% else %}
+      <p>Posted {{ days }} days ago.</p>
+    {% endif %}
+    </div>
+    <div class="row listing-body">
+      <div class="column">
+        <div class="row listing-title-price">
+          <h1>{{ item.title }}</h1><p style="display: none;" id="listing_id">{{ item.id }}</p>
+        </div>
+        {% if item.user.id == g.user.id %}
+          <a href="{{ url_for('edit', item_id=item.id) }}"><h2>[[ Click here to edit this post ]]</h2></a>
+          <br>
+        {% endif %}
+        <div class="row">
+          <p class="listing-price">${{ item.price }} {{ item.price_type }}</p>
+        </div>
+        <div class="big-picture-margin">
+          {% if item.photos.first() is not none %}
+            {% set path = item.photos.first().path %}
+            <img id="big-picture" src="{{ "../static/uploads/"+path }}" alt="{{ item.title }}"/>
+          {% else %}
+            <img id="big-picture" src="../static/images/veggies.jpg" alt="some delicious food">
+          {% endif %}
+        </div>
+        <div class="picture-thumbnails">
+          {% if item.photos.first() is not none %}
+            {% for photo in item.photos %}
+                {% set path = photo.path %}
+                  <img src="{{ path|resize('100x100', fill=1) }}" alt="{{ item.title }}" onclick="changeImage('{{ '../static/uploads/'+photo.path }}')" />
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="listing-description">
+          <h2 class="description-title">Description</h2>
+          <p class="description-body">{{ item.description }}</p>
+        </div>
+        <div class="column listing-category">
+          <h3>Category</h3>
+          <a href="{{ url_for('buy', filter_type=item.category) }}"><p class="single-category">{{ item.category }}</p></a>
+        </div>
+      </div>
+      <div class="column map-address">
+        <h2 class="location-title">Location</h2>
+        <div class="listing-map" id="googleMap"></div>
+        <div class="row"></div>
+        <div class="column listing-address">
+          <p id="street">{% if item.user.street %}{{ item.user.street }}{% endif %}</p>
+          <p id="citystate">{% if item.user.city and item.user.state %}{{ item.user.city }}, {{ item.user.state }}{% endif %}</p>
+          <p id="zipcode">{{ item.user.zipcode }}</p>
+        </div>
+        <div class="contact">
+          <div class="column">
+            <h2>Contact</h2>
+            <div class="contact-info">
+            {% if item.user.phone_number %}
+              <p>Phone: {{ item.user.phone_number }}</p>
+            {% endif %}
+              <p>Email: {{ item.user.email }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

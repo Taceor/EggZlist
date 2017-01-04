@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="sell-layout">
+  <h1>Upload file: </h1>
+  <form action="" method="post" enctype="multipart/form-data">
+      {{ form.csrf_token }}
+      {% for subfield in form.photos %}
+        <div class="photo-entry">
+          {{ subfield.label.text }}
+          {{ subfield(class="photo-field") }}
+        </div>
+      {% endfor %}
+      <br>
+      ADD: {{ form.add_photo }}
+      <input type="submit" value="Upload">
+      <div class="buttons">
+      <div class="column">
+        <button type="button" onclick="location.href='/buy'" name="cancel">
+          <p id="cancel">Cancel <i class="fa fa-times"></i></p>
+        </button>
+        <!-- <a href="/market" id="cancel">Cancel <i class="fa fa-times"></i></a> -->
+      </div>
+      <div class="together">
+        <div class="column">
+          <button type="button" onclick="location.href='/edit/{{ item.id }}'" name="back">
+            <p id="back">Back <i class="fa fa-arrow-left"></i></p>
+          </button>
+          <!-- <a href="/market/sell" id="back">Back <i class="fa fa-arrow-left"></i></a> -->
+        </div>
+        <div class="space column">
+          <button type="button" onclick="location.href='/listing/{{ item.id }}'" name="next">
+            <p id="next">Skip <i class="fa fa-arrow-right"></i></p>
+          </button>
+          <!--<a href="/market/preview" id="next">Next <i class="fa fa-arrow-right"></i></a>-->
+          <!-- <input type="submit" value="Next"> -->
+        </div>
+      </div>
+  </form>
+</div>
+{% endblock %}

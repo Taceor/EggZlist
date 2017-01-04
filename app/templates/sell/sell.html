@@ -1,0 +1,80 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="sell-layout">
+  {% include "includes/warning.html" %}
+  {% include "sell/includes/sell_steps.html" %}
+  <h1 class="post-step">EggZlist Post: Info</h1>
+  <form method="post" class="post-form" action="">
+    {{ form.hidden_tag() }}
+
+    <p>Contact name:<span class="required"> *</span></p>
+    {% if form.name.data %}
+        {{ form.name(class_="post-input disabled", readonly=true) }} <!--TODO Create Disbled CSS -->
+    {% else %}
+        {{ form.name(class_="post-input") }}
+    {% endif %}
+    {% for error in form.name.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>Email<span class="required"> *</span></p>
+    {{ form.email(class_="post-input", placeholder="email@example.com") }}
+    {% for error in form.email.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>Confirm email<span class="required"> *</span></p>
+    {{ form.confirm(class_="post-input", placeholder="email@example.com")}}
+    {% for error in form.confirm.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>Location:</p>
+    <p class="inline-checkbox">viewable on map{{ form.viewable(class_="post-input") }}</p>
+
+    <p>Zip Code<span class="required"> *</span></p>
+    {{ form.zipcode(class_="post-input zipcode") }}
+    {% for error in form.zipcode.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>Address</p>
+    {{ form.address(class_="post-input") }}
+    {% for error in form.address.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>City</p>
+    {{ form.city(class_="post-input") }}
+    {% for error in form.city.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>State</p>
+    {{ form.state(class_="post-input state") }}
+    {% for error in form.state.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <p class="contact-margin">May users contact you by phone? :</p>
+    <p>Phone</p>
+    {{ form.phone(class_="post-input", placeholder="123-456-7890") }}
+    {% for error in form.phone.errors %}
+        <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    <div class="buttons">
+      <div class="column">
+        <button href="/market" type="button" name="button">
+          <p id="cancel">Cancel <i class="fa fa-times"></i></p>
+        </button>
+      </div>
+      <div class="column">
+        <button type="submit" name="next">
+          <p id="next">Next <i class="fa fa-arrow-right"></i></p>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,1471 @@
+/*\
+Hello and welcome to the EggZlist style sheet. I tried to document most individual things
+as I could. Also, a few notes: I'm utiliaing flexbox for the layouts of pretty much
+the whole site. It is a CSS3 feature and is widly supported for modern browsers.
+In order to be mobile responsive I used media queries and they make the CSS look
+even worse. I'm trying to keep things as organized as I can so I will be doing the
+media queries for each section right underneath that element and not in a media
+queries section. Thanks for reading and good luck.
+*/
+
+/* default flexbox column */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* default flexbox row */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* this is for the sticky footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* padding-top pushes all content down to compensate for the fixed header */
+body {
+  display: flex;
+  /*min-height: 100vh;*/
+  flex-direction: column;
+  font-size: 100%;
+  padding-top: 3.5em;
+  background-color: #EEEEEE;
+  margin: 0 0 100px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,afafaf+100 */
+  /*background: rgb(252,252,252); /* Old browsers */
+  /*background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(175,175,175,1) 100%); /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(175,175,175,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  /*background: linear-gradient(to bottom, rgba(252,252,252,1) 0%,rgba(175,175,175,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#afafaf',GradientType=0 ); /* IE6-9 */
+}
+
+button{
+  margin      : 0;
+  padding     : 0;
+  border      : 0;
+  background-color: transparent;
+  font-family : inherit;
+  font-size   : 1em;
+  cursor      : pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Custom Icon */
+/* Creates the cutom EggZlist logo. Generated from iconmoon.io */
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?mm5sx7');
+    src:    url('../fonts/icomoon.eot?mm5sx7#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?mm5sx7') format('truetype'),
+        url('../fonts/icomoon.woff?mm5sx7') format('woff'),
+        url('../fonts/icomoon.svg?mm5sx7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-EggZlist-logo:before {
+    content: "\e900";
+    font-size: 2.5em;
+}
+/* End custom icon font */
+
+/* start header config */
+/* Fixes the header to top of screen, also centers is and gives max-width
+  z-index is for the fixed portion, so it shows above background */
+.full-width-header {
+  position: fixed;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  background-color: #3b8e3f;
+  box-shadow: 0 .2em .5em #707070;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1344;
+}
+
+.header-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 75em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1337;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/*Lines up navigation tabs*/
+.nav-position {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: #245827;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+/* forms the actual sizes of the header boxes with flex-grow: 1*/
+.nav-layout {
+  display: flex;
+  height: 3.5em;
+  width: 20%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #3b8e3f;
+}
+
+/* main nav box configuration */
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5em;
+  flex-grow: 1;
+  background-color: #3b8e3f;
+  letter-spacing: .02em;
+  font-weight: 500;
+  /*transition: background-color .3s linear 0s;*/
+  color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+/* hover options */
+.nav-item:hover {
+  background-color: #245827;
+}
+
+.active {
+  background-color: #245827;
+}
+
+.nav-info {
+  display: flex;
+  align-items: center;
+}
+
+/* starting dropdown config */
+.drop-layout {
+  display: flex;
+}
+
+/* main dropdown config */
+.drop-down {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  left: 0em;
+  position: absolute;
+  width: 100%;
+  height: 2.5em;
+  letter-spacing: .02em;
+  box-shadow: .2em .2em .5em #707070;
+  color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  background-color: #3b8e3f;
+}
+
+/* .order places the height for the dropdown menu */
+.order1 {
+  top: 3.5em;
+}
+
+.order2 {
+  top: 6em;
+}
+
+.order3 {
+  top: 8.5em;
+}
+
+/* this is very important for display of the dropdown on hover */
+.nav-layout:hover > div > ul > li > a {
+  display: flex;
+}
+
+/* these are styles for the dropdown itself */
+.drop-down:hover {
+  box-shadow: .2em .2em .5em #707070;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  background-color: #245827;
+}
+
+/* Icon and name spacing in header nav-info */
+.nav-text {
+  margin-left: .9em;
+}
+
+/* moves the arrow in login nav-box to the right */
+.register-arrow {
+  margin-left: .9em;
+}
+
+/* Below are media queries to make the header mobile responsive */
+@media (max-width: 700px) {
+  body {
+    padding-top: 4em;
+  }
+  .nav-layout {
+    height: 4em;
+  }
+  .nav-item {
+    height: 4em;
+  }
+  .nav-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon-EggZlist-logo {
+    font-size: .85em;
+  }
+  .nav-text {
+    margin-left: 0;
+    margin-top: .2em;
+  }
+  .login-margin {
+    margin-left: .9em;
+  }
+  .nav-text.register {
+    margin-left: .9em;
+  }
+  .order1 {
+    top: 4em;
+  }
+  .order2 {
+    top: 6.5em;
+  }
+  .order3 {
+    top: 9em;
+  }
+}
+
+@media (max-width: 580px) {
+  .drop-down {
+    width: 110%;
+  }
+}
+
+@media (max-width: 550px) {
+  .drop-down {
+    width: 120%;
+  }
+}
+
+@media (max-width: 500px) {
+  #text-smaller {
+    font-size: .9em;
+  }
+  .drop-down {
+    width: 130%;
+  }
+}
+
+@media (max-width: 485px) {
+  .drop-down {
+    width: 140%;
+  }
+}
+
+@media (max-width: 435px) {
+  .drop-down {
+    width: 150%;
+  }
+}
+
+@media (max-width: 385px) {
+  .drop-down {
+    width: 160%;
+  }
+}
+
+@media (max-width: 375px) {
+  .drop-down {
+    width: 165%;
+  }
+}
+
+@media (max-width: 365px) {
+  .nav-icon {
+    font-size: 1.8em;
+  }
+  .drop-down {
+    width: 170%;
+  }
+  .icon-EggZlist-logo {
+    font-size: .75em;
+  }
+}
+
+@media (max-width: 350px) {
+  .nav-text {
+    font-size: .8em;
+  }
+  #text-smaller {
+    font-size: .75em;
+  }
+  .drop-down {
+    width: 180%;
+  }
+}
+/* End header config */
+
+/* start main body */
+.content {
+  max-width: 25em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.main-layout {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-layout {
+  max-width: 25em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.buy-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.sell-layout {
+  max-width: 25em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.listing-layout {
+  max-width: 50em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.profile-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.settings-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.about-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+h1.welcome {
+  text-align: center;
+}
+/* end main body */
+
+
+/* Start home page */
+.home-title {
+  text-align: center;
+}
+
+.home-motto {
+  text-align: center;
+}
+/* End home page */
+
+/* Start Profile page */
+.profile-listing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-width {
+  width: 85%;
+}
+
+.settings-margin {
+  margin-left: 1em;
+}
+
+.profile-settings {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  padding: .3em;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.profile-delete {
+  display: flex;
+  flex-direction: column;
+}
+/* End profile poge */
+
+/* Start settings page */
+.delete-account {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.warning {
+  color: red;
+  margin-bottom: .5em;
+}
+/* End settings page */
+
+/* Start about page */
+.about-position {
+  margin-top: 1em;
+  margin-left: .4em;
+  margin-right: .4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* End about page */
+
+/* start sell forms (posting) */
+.row.options {
+  justify-content: space-around;
+}
+
+.step-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: .5em;
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5em;
+  padding: .3em;
+  margin-bottom: 0;
+}
+
+.rectangle {
+  background-color: #2E7D32;
+  height: .2em;
+}
+
+.step.in-progress {
+  color: rgba(0, 0, 0, .50);
+}
+
+.step.incomplete {
+  color: rgba(0, 0, 0, .25);
+}
+
+.check {
+  margin-left: .4em;
+}
+
+.required-notice {
+  align-self: center;
+  font-size: 1.2em;
+  margin-top: .3em;
+  margin-bottom: .5em;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  margin-left: .4em;
+  margin-right: .4em;
+  margin-bottom: 1.5em;
+}
+
+.post-step {
+  font-size: 1.9em;
+  text-align: center;
+  margin: .5em;
+}
+
+@media (max-width: 475px) {
+  .post-step {
+    font-size: 1.6em;
+    text-align: center;
+  }
+}
+
+.disabled {
+  color: transparent;
+  text-shadow: 0 0 0 #bfbfbf
+}
+
+.post-input {
+  border-style: none;
+  background-color: white;
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em;
+}
+
+.post-input-2 {
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em;
+}
+
+.inline-checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.inline-checkbox.contact {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.check-all {
+  margin-bottom: .5em;
+}
+
+.contact-margin {
+  margin-bottom: .5em;
+}
+
+.required {
+  color: red;
+}
+
+.zipcode {
+  width: 7em;
+}
+
+.state {
+  width: 4em;
+}
+
+input.phone-3 {
+  width: 2em;
+}
+
+input.phone-4 {
+  width: 3em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .75em;
+}
+
+.together {
+  display: flex;
+  flex-direction: row;
+}
+
+#cancel {
+  padding: .3em;
+  color: black;
+}
+
+#back {
+  padding: .3em;
+  color: black;
+}
+
+#confirm-button {
+  padding: .3em;
+  color: black;
+}
+
+#submit {
+  padding: .3em;
+  color: black;
+}
+
+.cancel.rectangle {
+  background-color: #c62828;
+  height: .3em;
+}
+
+.next.rectangle {
+  height: .3em;
+}
+
+.back.rectangle {
+  background-color: #FDD835;
+  height: .3em;
+}
+
+.confirm.rectangle {
+  height: .3em;
+}
+
+#next {
+  padding: .3em;
+  color: black;
+}
+
+#sign-in-button {
+  padding: .3em;
+  color: black;
+}
+
+.space.column {
+  margin-left: 2em;
+}
+
+@media (max-width: 375px)  {
+  #preview-buttons {
+    font-size: .9em;
+  }
+}
+
+@media (max-width: 400px) {
+  .space.column {
+    margin-left: .7em;
+  }
+}
+
+@media (max-width: 340px) {
+  .space.column {
+    margin-left: .4em;
+  }
+}
+
+.file_upload {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 400px) {
+  .file_upload>.post-input-2 {
+    font-size: .8em;
+  }
+}
+
+.description {
+  resize: vertical;
+  overflow: auto;
+}
+
+input[type='file'] {
+  color: transparent;
+}
+/* end sell form */
+
+/* start buy section */
+.buy {
+  margin-top: 1.5em;
+}
+
+.row.buy {
+  position: fixed;
+  z-index: 1336;
+  top: 2.7em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: .35em;
+  font-size: 1.3em;
+  padding-top: .35em;
+  width: 100%;
+  box-shadow: 0 .1em .2em -2px #707070;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -webkit-linear-gradient(rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+  background: -o-linear-gradient(rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+  background: linear-gradient(rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+@media (max-width: 700px) {
+  .row.buy {
+    top: 3.1em;
+    padding-top: .3em;
+    padding-bottom: .3em;
+  }
+}
+
+.search {
+  max-width: 45em;
+}
+
+.buy-spacing {
+  padding-top: 3.5em;
+  margin-left: .4em;
+  margin-right: .4em;
+}
+
+.buy-spacing-listing {
+  padding-top: 1.5em;
+  margin-left: .4em;
+  margin-right: .4em;
+}
+
+@media (max-width: 700px) {
+  .buy-spacing {
+    padding-top: 3.5em;
+  }
+
+  .buy-spacing-listing {
+    padding-top: 1em;
+  }
+}
+
+.post-input.buy-margin {
+  margin-bottom: 0em;
+}
+
+.post-title {
+  word-wrap: break-word;
+  font-size: 1.2em;
+}
+
+#filter {
+  color: black;
+  padding: .3em;
+}
+
+.filter.rectangle {
+  height: .3em;
+}
+
+.filter-modal {
+  display: none;
+  position: fixed;
+  padding-top: 10em;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.visible {
+  display: block;
+}
+
+.filter-modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  max-width: 43em;
+  width: 95%;
+}
+
+.filter-modal-header {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close button styles */
+.close {
+  padding-right: .2em;
+  align-self: flex-end;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+
+.sliders {
+  margin-left: .3em;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  height: 15em;
+  width: auto;
+  background-color: blue;
+}
+
+.search-results {
+  max-width: 30em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.result {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  margin-top: .4em;
+  margin-bottom: .4em;
+  padding: .3em;
+  background-color: #FAFAFA;
+  transition: all .2s ease-in;
+  box-shadow: 0 .3em .7em -7px black;
+  text-decoration-color: black;
+}
+
+.result:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.result-info {
+  width: 100%
+}
+
+.number-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: .3em;
+  border-radius: .3em;
+  background-color: #FFA726;
+}
+
+.map-number {
+  padding: .3em;
+}
+
+.result-space {
+  justify-content: space-between;
+}
+
+.category {
+  font-size: .8em;
+  background-color: #E0E0E0;
+  border-radius: .2em;
+  padding: .2em;
+  margin-top: .4em;
+  margin-bottom: .4em;
+}
+
+.author {
+  font-style: italic;
+  font-size: .8em;
+}
+
+.price {
+  font-size: 1.2em;
+}
+
+.action-icons-wrapper {
+  display: flex;
+  align-self: flex-end;
+}
+
+.action-icons {
+  display: flex;
+}
+
+.listing-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: .6em;
+  font-size: 1.2em;
+  padding: .2em;
+  border-radius: .3em;
+}
+
+.save {
+  background-color: rgba(255,193,7 ,1);
+  color: white;
+}
+
+.flag {
+  background-color: rgba(244,67,54 ,1);
+  color: white;
+}
+
+.price-date {
+  align-items: baseline;
+}
+
+.list-pic {
+  height: 4.5em;
+  width: 4.5em;
+  margin-right: .2em;
+  background-color: blue;
+}
+
+.listing-pictures {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.row.listing-title {
+  justify-content: space-between;
+}
+
+.row.listing-info {
+  justify-content: space-between;
+}
+
+.listing-title-price {
+  align-items: center;
+  margin-top: .4em;
+  margin-bottom: .4em;
+  word-wrap: break-word;
+}
+
+.listing-price {
+  font-size: 1.5em;
+  margin-bottom: .4em;
+}
+
+.listing-body {
+ justify-content: space-between;
+}
+
+.big-picture-margin {
+  margin-bottom: .7em;
+  width: 100%;
+  height: auto;
+}
+
+#big-picture {
+  width: 100%;
+  height: auto;
+}
+
+
+.map-address {
+  margin-left: 2em;
+  justify-content: center;
+}
+
+.back-search {
+  padding: .3em;
+  margin-bottom: 1.2em;
+  color: black;
+}
+
+.back-button {
+  color: black;
+}
+
+.search-arrow {
+  margin-right: .3em;
+}
+
+.listing-map {
+  background-color: gray;
+  height: 15em;
+  width: 15em;
+}
+
+.listing-address {
+  margin-top: .3em;
+  background-color: rgba(255,255,255, .5);
+  padding: .4em;
+}
+
+.contact-info {
+  margin-top: .3em;
+  background-color: rgba(255,255,255, .5);
+  padding: .4em;
+}
+
+.contact {
+  margin-top: 1em;
+}
+
+.location-title {
+  margin-bottom: .2em;
+}
+
+.description-body {
+  margin-top: .3em;
+  background-color: rgba(255,255,255, .5);
+  padding: .4em;
+}
+
+.listing-description {
+  margin-top: .6em;
+}
+
+.user-info {
+  align-items: center;
+  margin-top: 1em;
+}
+
+.listing-category {
+  margin-top: 2em;
+}
+
+.single-category {
+  margin-top: .3em;
+  background-color: rgba(255,255,255, .5);
+  padding: .4em;
+  align-self: flex-start;
+  border-radius: 1em 1em 1em 1em;
+}
+
+@media (max-width: 900px) {
+  .result:hover {
+    transform: none;
+  }
+  .listing-body {
+    flex-direction: column;
+  }
+  .map-address {
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* end buy section */
+
+/* Start login forms */
+.login-container {
+  margin-top: .3em;
+  margin-bottom: 1.5em;
+}
+
+.login-container.top {
+  margin-bottom: 0;
+}
+
+.login-container.bottom {
+  margin-bottom: 0;
+}
+
+.question-center {
+  text-align: center;
+  font-size: .7em;
+  text-decoration: underline;
+}
+
+.forgot-password {
+  font-size: .7em;
+  text-decoration: underline;
+}
+
+.login.rectangle {
+  height: .3em;
+}
+
+.or {
+  font-size: 1em;
+  margin-top: .6em;
+  margin-bottom: .5em;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3em;
+  margin-top: .3em;
+  margin-bottom: .3em;
+}
+
+.login-title.underline {
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sign-in {
+  border-style: none;
+  background-color: white;
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em;
+}
+
+/* End login forms */
+
+/* Begin footer section */
+.footer-info {
+  align-items: center;
+  /*justify-content: space-between;*/
+  margin-top: .3em;
+  margin-bottom: .3em;
+}
+
+/* sticky footer and centering */
+.footer-wrapper {
+  position: absolute;
+  left:0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2.5em;
+  margin: 0 auto;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+
+.footer-position-2 {
+  position: absolute;
+  left:0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  max-width: 75em;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 10;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.footer-layout-2{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  height: 2.5em;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#footer-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: black;
+  flex-grow: 9;
+  /*background-color: #6C7A89;*/
+}
+
+.alpha {
+  color: red;
+}
+
+.alpha-warning {
+  color: white;
+}
+
+.alpha-flash {
+  background-color: red;
+  background-color: rgba(183,28,28 ,.6);
+  border-radius: 1em;
+  margin: 1em;
+  padding: .7em;
+  box-shadow: 0 .5em .3em -7px #707070;
+}
+
+.flash {
+  background-color: white;
+  background-color: rgba(0, 128, 43, .7);
+  border-radius: 1em;
+  margin: 1em;
+  padding: .7em;
+  box-shadow: 0 .5em .3em -7px #707070;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.company {
+  margin-left: .4em;
+}
+
+#footer-social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.facebook-icon {
+  margin-left: 10%;
+  color: #3b5998;
+}
+
+.twitter-icon {
+  color: #4099FF;
+}
+
+.twitter-icon:hover {
+  color: #4099FF;
+}
+
+.facebook-icon:hover {
+  color: #3b5998;
+}
+
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/* Item 1 */
+
+  .item-spacer {
+    margin: 1em 0 1em 0;
+  }
+
+.item-wrapper {
+
+}
+
+  .item {
+    background-color: #f5f5f5;
+    border-radius: .161em;
+    display: flex;
+    margin: .2em;
+    padding: .3em 0 0 .3em;
+    box-shadow: .07em .07em .2em 0 rgba(158,158,158 ,1);
+  }
+
+  .item-link {
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+    flex: 1;
+  }
+
+      .item-picture {
+        background-color: gray;
+        border-radius: .161em;
+        height: 5em;
+        width: 5em;
+      }
+
+      .item-price {
+        text-align: center;
+        font-size: 1.4em;
+        margin: .3em 0 0 0;
+      }
+
+      .measurment {
+        text-align: center;
+        margin: .1em 0 .3em 0;
+      }
+
+    .item-col-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: .9em;
+      width: 100%;
+    }
+
+      .item-col-2-1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+        .item-title {
+          font-size: 1.5em; 
+          word-break: break-word;
+        }
+
+        .item-author {
+          font-style: italic;
+          margin-top: .3em;
+        }
+
+      .item-col-2-2 {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        margin-top: 1em;
+        justify-content: space-between;
+      }
+
+        .item-category {
+          background-color: #B3E5FC;
+          background-color: #e8cda8;
+          padding: .3em;
+          border-radius: .161em;
+          margin-right: .7em;
+        }
+
+        .item-date {
+          margin: .4em 0 0 0;
+        }
+
+    .item-col-3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: .161em;
+    }
+
+      .item-number {
+        background-color: #ffb14d;
+        border-radius: .161em;
+        text-align: right;
+        padding: .3em;
+        margin: 0 .3em .4em .3em;
+      }
+
+      .item-button {
+        align-items: center;
+        box-shadow: .05em .05em .1em 0 rgba(158,158,158 ,1);
+        display: flex;
+        margin: 0 .3em .4em .3em;
+        flex-direction: column;
+        /* Changes the font of the buttons */
+        /*font-family: 'Roboto', sans-serif;*/
+        padding: .3em;
+        text-decoration: none;
+        outline: none;
+        background-color: #ececec;
+      }
+
+        i.item-save-icon {
+          font-size: 1.4em;
+          color: #7a7b7b;
+        }
+
+        .item-save {
+          padding-bottom: .4em;
+        }
+
+        .item-save:hover i.item-save-icon {
+          color: #fed000;
+        }
+
+        .item-save-text {
+          margin: .2em 0 0 0;
+        }
+        
+        i.item-flag-icon {
+          font-size: 1.4em;
+          color: #7a7b7b;
+        }
+
+        .item-flag {
+          padding-bottom: .4em;
+        }
+
+        .item-flag:hover i.item-flag-icon {
+          color: #b30905;
+        }
+
+        .item-flag-text {
+          margin: .2em 0 0 0;
+        }
+
+/* END Item 1 */
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/

@@ -1,0 +1,49 @@
+{% extends "base.html"%}
+{% block content %}
+<script src="{{ url_for('static', filename='js/populate_map.js') }}"></script>
+<div class="row buy">
+  <div class="search">
+    <i class="fa fa-search"></i>
+    <input class="post-input zipcode buy-margin" type="text" name="title" placeholder="Zip Code">
+  </div>
+  <div class="filter">
+    <button id="filter-button" href="/buy/filter" type="button" name="button">
+      <p data-toggle="tooltip" data-placement="bottom" title="<strong>TEST</strong>" html="true">Filter <i class="fa fa-sliders sliders"></i></p>
+    </button>
+    <!-- <p><a id="filter" href="#">Filter <i class="fa fa-sliders sliders"></i></a></p> -->
+  </div>
+</div>
+
+<!-- Filter Modal -->
+<div id="filter-modal-js" class="filter-modal">
+  <div class="filter-modal-content">
+    <div class="filter-modal-header">
+      <span class="close">x</span>
+      <h2>Filter Options</h2>
+    </div>
+    <div class="filter-modal-body">
+        <a href="{{ url_for('buy', filter_type='Dairy') }}">Dairy</a>
+        <a href="{{ url_for('buy', filter_type='Fruit') }}">Fruit</a>
+        <a href="{{ url_for('buy', filter_type='Grain') }}">Grain</a>
+        <a href="{{ url_for('buy', filter_type='Protein') }}">Protein</a>
+        <a href="{{ url_for('buy', filter_type='Vegetable') }}">Vegetable</a>
+        <a href="{{ url_for('buy', filter_type='Other') }}">Other</a>
+    </div>
+    <div class="filter-modal-footer">
+      <h3>footer</h3>
+    </div>
+  </div>
+</div>
+
+<div class="buy-layout">
+  <div class="buy-spacing">
+    <div class="map-container" id="googleMap"></div>
+
+    <div class="search-results">
+    {% for item in items %}
+        {% include "buy/item.html" %}
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

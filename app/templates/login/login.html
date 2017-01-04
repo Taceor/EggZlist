@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="login-layout">
+  {% include "includes/warning.html" %}
+  <form method="post" class="post-form login-container top" action="">
+    {{ form.hidden_tag() }}
+    <p class="question-center"><a href="#">What is EggZlist?</a></p>
+    <p class="text-center login-title">Sign In</p>
+    <p>Username or email</p>
+    {{ form.username(class_="sign-in") }}
+    <p>Password</p>
+    {{ form.password(class_="sign-in") }}
+    <p class="forgot-password"><a href="#">Forgot password?</a></p>
+
+    <div class="buttons">
+      <div class="column">
+        <button href="/" type="" name="button">
+          <p id="cancel">Cancel <i class="fa fa-times"></i></p>
+        </button>
+        <!-- <a href="/market" id="cancel">Cancel <i class="fa fa-times"></i></a> -->
+      </div>
+      <div class="column">
+        <button href="/" type="submit" name="button">
+          <p id="next">Sign In <i class="fa fa-arrow-right"></i></p>
+        </button>
+        <!-- <input type="submit" value="Sign In"> <i class="fa fa-arrow-right"></i></a> -->
+      </div>
+    </div>
+    <p class="text-center or">or</p>
+  </form>
+  <div class="login-title underline">
+    <a href="/newuser" class="text-center">Create an account</a>
+  </div>
+
+</div>
+{% endblock %}

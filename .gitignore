@@ -1,0 +1,13 @@
+config.py
+db_repository/
+migrations/
+app/uploads/*.jpg
+flask/
+app.db
+*.pyc
+app/*.pyc
+
+app/static/uploads/*
+app/static/cache/*.*
+
+!app/static/uploads/.gitkeep

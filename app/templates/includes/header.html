@@ -1,0 +1,97 @@
+<div class="full-width-header">
+  <header class="header-position">
+    <nav class="header-layout">
+      <ul class="nav-position">
+        <li class="nav-layout">
+          <a href="/" class="nav-item {{home}}">
+            <div class="nav-info">
+              <i class="icon-EggZlist-logo"></i>
+              <p class="nav-text" id="text-smaller">EggZlist</p>
+            </div>
+          </a>
+        </li>
+        {% if g.user.is_authenticated %}
+        <li class="nav-layout">
+          <div class="nav-item {{profile}}">
+            <div class="nav-info">
+              <i class="fa fa-arrow-down fa-2x nav-icon"></i>
+              <p class="nav-text" id="text-smaller">Profile</p>
+            </div>
+          </div>
+          <div class="toggle-drop">
+            <ul class="drop-position">
+              <li class="drop-layout">
+                <a href="{{ url_for('profile', username = g.user.username) }}" class="drop-down order1">
+                  <i class="fa fa-user"></i>
+                  <p class="nav-text register">Profile</p>
+                </a>
+              </li>
+              <li class="drop-layout">
+                <a href="{{ url_for('profile_settings') }}" class="drop-down order2">
+                  <i class="fa fa-cogs"></i>
+                  <p class="nav-text register">Settings</p>
+                </a>
+              </li>
+              <li class="drop-layout">
+                <a href="{{ url_for('logout') }}" class="drop-down order3">
+                  <i class="fa fa-sign-out"></i>
+                  <p class="nav-text register">Logout</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        {% else %}
+        <li class="nav-layout">
+          <div class="nav-item {{login}}">
+            <div class="nav-info">
+              <i class="fa fa-arrow-down fa-2x nav-icon"></i>
+              <p class="nav-text" id="text-smaller">Login</p>
+            </div>
+          </div>
+          <div class="toggle-drop">
+            <ul class="drop-position">
+              <li class="drop-layout">
+                <a href="/login" class="drop-down order1">
+                  <i class="fa fa-sign-in"></i>
+                  <p class="nav-text login-margin">Login</p>
+                </a>
+              </li>
+              <li class="drop-layout">
+                <a href="/newuser" class="drop-down order2">
+                  <i class="fa fa-list"></i>
+                  <p class="nav-text login-margin">Register</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        {% endif %}
+        <li class="nav-layout">
+          <a href="/community" class="nav-item {{community}}">
+            <div class="nav-info">
+              <i class="fa fa-users fa-2x nav-icon"></i>
+              <p class="nav-text community" id="text-smaller">Community</p>
+            </div>
+          </a>
+        </li>
+        <li class="nav-layout">
+          <a href="/sell" class="nav-item {{sell}}">
+            <div class="nav-info">
+              <i class="fa fa-usd fa-2x nav-icon"></i>
+              <p class="nav-text">Sell</p>
+            </div>
+          </a>
+        </li>
+        <li class="nav-layout">
+          <a href="/buy" class="nav-item {{buy}}">
+            <div class="nav-info">
+              <i class="fa fa-shopping-basket fa-2x nav-icon"></i>
+              <p class="nav-text">Buy</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>

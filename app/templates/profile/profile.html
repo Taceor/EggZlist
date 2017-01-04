@@ -1,0 +1,76 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="profile-layout">
+  <div class="row profile-info">
+    <h1>{{ user.username }}</h1>
+    {% if g.user.username == user.username %}
+    <a href="{{ url_for('profile_settings') }}">
+        <button type="button" name="settings" class="profile-settings">
+          <p class="fa fa-cogs"><span class="settings-margin">Settings</span></p>
+        </button>
+    </a>
+    {% endif %}
+  </div>
+  {% if g.user.username == user.username and g.user.is_verified == False %}
+  <h3>Your account has not been verified. Click <a href={{
+  url_for('resend_verification') }}>HERE</a> to resend verification email.</h3>
+  {% endif %}
+  <h3>About {{ user.username }}:</h3>
+  <br>
+  {% if user.about is not none %}
+      <p>{{ user.about }}</p>
+  {% else %}
+      <p>User has not written anything about themselves yet.</p>
+  {% endif %}
+  <br>
+  <hr>
+  <h3>My Listings</h3>
+  <ul>
+  {% for item in items  %}
+    <li class="profile-listing">
+      <div class="column profile-width">
+      {% include "buy/item.html" %}
+      </div>
+      {% if g.user.username == user.username %}
+      <div class="column">
+        <button type="button" name="delete" class="profile-delete" onclick="location.href='{{ url_for('delete_listing', item_id=item.id) }}'">
+          <p class="fa fa-trash-o fa-2x"></p>
+          <p>Remove</p>
+        </button>
+        <button type="button" name="edit" class="profile-edit" onclick="location.href='{{ url_for('edit', item_id=item.id) }}'">
+          <p class="fa fa-pencil-square-o fa-2x"></p>
+          <p>Edit</p>
+        </button>
+      </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+
+  <h3>My Saved Posts</h3>
+  <ul>
+  {% for item in user.saves %}
+    <li class="profile-listing">
+      <div class="column profile-width">
+      {% include "buy/item.html" %}
+      </div>
+      {% if g.user.username == user.username %}
+      <div class="column">
+        <button type="button" name="delete" class="profile-delete" onclick="location.href='{{ url_for('delete_listing', item_id=item.id) }}'">
+          <p class="fa fa-trash-o fa-2x"></p>
+          <p>Remove</p>
+        </button>
+        <button type="button" name="edit" class="profile-edit" onclick="location.href='{{ url_for('edit', item_id=item.id) }}'">
+          <p class="fa fa-pencil-square-o fa-2x"></p>
+          <p>Edit</p>
+        </button>
+      </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+
+
+</div>
+
+{% endblock %}

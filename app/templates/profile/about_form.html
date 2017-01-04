@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="about-layout">
+<h1>About: </h1>
+<form method="post" class="post-form" action="">
+    {{ form.hidden_tag() }}
+    {{ form.about }}
+    <div class="column">
+        <button type="submit" name="save">
+            <p id="Save">Save <i class="fa fa-arrow-right"></i></p>
+        </button>
+    </div>
+</form>
+{% endblock %}

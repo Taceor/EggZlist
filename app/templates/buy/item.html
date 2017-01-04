@@ -1,0 +1,57 @@
+<div class="item-spacer"></div>
+<div class="item-wrapper">
+  
+  <div class="item">
+    <a href="{{ url_for('listing', item_id=item.id) }}" class="item-link">
+      <div class="item-col-1">
+        {% if item.photos.first() is not none %}
+          {% set photo = item.photos.first() %}
+          {% set path = photo.path %}
+          <img class="item-picture" src="{{ path|resize('150x150', fill=1) }}" alt="item picture">
+        {% else %}
+          <img class="item-picture" src="{{ url_for('static', filename='images/veggies_150x150.png') }}" alt="item picture">
+        {% endif %}
+        <p class="item-price">${{ item.price }}</p>  
+        <p class="measurment">/ {{ item.price_type }}</p> 
+      </div> 
+      <!-- END .item-col-1 -->
+
+      <div class="item-col-2">
+
+        <div class="item-col-2-1">
+          <p class="item-title">{{ item.title }}</p>
+          <p class="item-author">Posted by {{ item.user.username }}</p>   
+        </div>
+        <!-- END .item-col-2-1 -->
+
+        <div class="item-col-2-2">
+          <p class="item-category">{{ item.category }}</p>
+          <p class="item-date">posted {{ item.post_date.strftime('%b %d') }}</p>  
+        </div>
+        <!-- END .item-col-2-2 -->
+
+      </div>
+      <!-- END .item-col-2 -->   
+
+    </a>
+    <!-- END .item-link -->
+    
+    <div class="item-col-3">
+      <p class="item-number">#</p>
+      <button class="item-button item-save" onclick="save_item('{{ g.user.id }}', '{{ item.id }}')">
+        <i class="item-save-icon fa fa-star" aria-hidden="true"></i>
+        <p class="item-save-text">save</p>
+      </button>
+      <button class="item-button item-flag" formaction="#">
+        <i class="item-flag-icon fa fa-flag" aria-hidden="true"></i>
+        <p class="item-flag-text">flag</p>
+      </button>
+    </div>
+    <!-- END .item-col-3 -->
+
+  </div>
+  <!-- END .item -->
+  
+</div>
+<!-- END .item-wrapper -->
+<div class="item-spacer"></div>

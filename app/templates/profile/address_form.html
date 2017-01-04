@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="sell-layout">
+<h1 class="post-step">{{ user.username }}: Settings</h1>
+<form method="post" class="post-form" action="">
+  {{ form.hidden_tag() }}
+
+  <p>Contact name:<span class="required"> *</span></p>
+  {{ form.name(class_="post-input") }}
+
+  <p>Email<span class="required"> *</span></p>
+  {{ form.email(class_="post-input", placeholder="email@example.com") }}
+
+  <p>Confirm email<span class="required"> *</span></p>
+  {{ form.confirm(class_="post-input", placeholder="email@example.com")}}
+
+  <p>Location:</p>
+  <p class="inline-checkbox">viewable on map{{ form.viewable(class_="post-input") }}</p>
+
+  <p>Zip Code<span class="required"> *</span></p>
+  {{ form.zipcode(class_="post-input zipcode") }}
+
+  <p>Address</p>
+  {{ form.address(class_="post-input") }}
+
+  <p>City</p>
+  {{ form.city(class_="post-input") }}
+
+  <p>State</p>
+  {{ form.state(class_="post-input state") }}
+
+  <p class="contact-margin">May users contact you by phone? :</p>
+  <p>Phone</p>
+  {{ form.phone(class_="post-input", placeholder="123-456-7890") }}
+
+  <div class="buttons">
+    <div class="column">
+      <button href="/market" type="button" name="button">
+        <p id="cancel">Cancel <i class="fa fa-times"></i></p>
+      </button>
+    </div>
+    <div class="column">
+      <button type="submit" name="save">
+        <p id="Save">Save <i class="fa fa-arrow-right"></i></p>
+      </button>
+      <!--<a href="/market/sell_2" id="next">Next <i class="fa fa-arrow-right"></i></a>-->
+    </div>
+  </div>
+</form>
+</div>
+{% endblock %}

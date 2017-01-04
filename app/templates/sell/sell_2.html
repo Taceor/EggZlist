@@ -1,0 +1,49 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="sell-layout">
+  {% include "includes/warning.html" %}
+  {% include "sell/includes/sell_steps.html" %}
+  <h1 class="post-step">EggZlist Post: Items</h1>
+  <form method="post" class="post-form" action="">
+    {{ form.hidden_tag() }}
+
+    <p>Title of post<span class="required"> *</span></p>
+    {{ form.title(class_="post-input") }}
+
+    <p>Food Category</p>
+    {{ form.category(class_="post-input-2") }}
+
+    <p>Price:</p>
+    <p>${{ form.price(class_="post-input", placeholder="0.00", size="5") }}</p>
+
+    {{ form.price_type(class_="post-input-2") }}
+
+    <p>Description<span class="required"> *</span></p>
+    {{ form.description(class_="post-input description", rows="4", cols="25") }}
+
+    <div class="buttons">
+      <div class="column">
+        <button type="button" onclick="location.href='/buy'" name="cancel">
+          <p id="cancel">Cancel <i class="fa fa-times"></i></p>
+        </button>
+        <!-- <a href="/market" id="cancel">Cancel <i class="fa fa-times"></i></a> -->
+      </div>
+      <div class="together">
+        <div class="column">
+          <button type="button" onclick="location.href='/sell'" name="back">
+            <p id="back">Back <i class="fa fa-arrow-left"></i></p>
+          </button>
+          <!-- <a href="/market/sell" id="back">Back <i class="fa fa-arrow-left"></i></a> -->
+        </div>
+        <div class="space column">
+          <button type="submit" name="next">
+            <p id="next">Next <i class="fa fa-arrow-right"></i></p>
+          </button>
+          <!--<a href="/market/preview" id="next">Next <i class="fa fa-arrow-right"></i></a>-->
+          <!-- <input type="submit" value="Next"> -->
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

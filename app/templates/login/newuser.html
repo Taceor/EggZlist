@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="login-layout">
+  {% include "includes/warning.html" %}
+  <form method="post" class="post-form login-container bottom" action="">
+    {{ form.hidden_tag() }}
+    <p class="question-center"><a href="#">What is EggZlist?</a></p>
+    <p class=" text-center login-title">Create an account</p>
+    <p>Username</p>
+    {{ form.username(class_="sign-in") }}
+    <p>Email</p>
+    {{ form.email(class_="sign-in", placeholder="email@example.com") }}
+    <p>Confirm email</p>
+    {{ form.email_confirm(class_="sign-in", placeholder="email@example.com") }}
+    <p>Password</p>
+    {{ form.password(class_="sign-in") }}
+    <p>Confirm password</p>
+    {{ form.password_confirm(class_="sign-in") }}
+
+    <div class="buttons">
+      <div class="column">
+        <button href="./market" type="button" name="button">
+          <p id="cancel">Cancel <i class="fa fa-times"></i></p>
+        </button>
+        <!-- <a href="./market" id="cancel">Cancel <i class="fa fa-times"></i></a> -->
+      </div>
+      <div class="column">
+        <button href="#" type="submit" name="button">
+          <p id="submit">Submit <i class="fa fa-arrow-right"></i></p>
+        </button>
+        <!-- <input type="submit" value="Create"> <i class="fa fa-arrow-right"></i></a> -->
+      </div>
+    </div>
+    <p class="text-center or">or</p>
+  </form>
+  <div class="login-title underline">
+    <a href="/market/login" class="text-center">Login</a>
+  </div>
+
+</div>
+{% endblock %}
