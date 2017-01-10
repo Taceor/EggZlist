@@ -16,6 +16,19 @@ function save_item(user_id, item_id)
       });
 }
 
+function flag_item(user_id, item_id)
+{
+  $.get(
+    url="/_flag_item",
+    data={
+      item_id:item_id,
+      user_id:user_id
+    },
+    success=function() {
+      alert("Flagged");
+    });
+}
+
 function initialize()
 {
   var mapProp = {

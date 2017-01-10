@@ -312,11 +312,23 @@ def delete_listing(item_id):
 @app.route("/_flag_item")
 def flag_item():
     item_id = request.args.get('item_id')
+    user_id = request.args.get('user_id')
+    if user_id is not -1:
+        user = User.query.get(user_id)
+    else:
+        pass
+        #TODO: Anonymous user reports
     item = Item.query.get(item_id)
     if item is not None:
-        item.flags += 1
+        item.flags = Item.flags + 1 
+        """Avoiding "race conditions"
+        See: http://stackoverflow.com/questions
+        /2334824/how-to-increase-a-counter-in-sqlalchemy
+        """
         db.session.add(item)
         db.session.commit()
+        worked=True
+    return jsonify(worked=worked)
 
 @app.route("/_save_item")
 def save_item():
