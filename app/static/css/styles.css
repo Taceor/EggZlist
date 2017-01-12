@@ -1007,6 +1007,10 @@ input[type='file'] {
  justify-content: space-between;
 }
 
+.listing-edit {
+ justify-content: center;
+}
+
 .big-picture-margin {
   margin-bottom: .7em;
   width: 100%;
