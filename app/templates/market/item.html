@@ -2,7 +2,7 @@
 <div class="item-wrapper">
   
   <div class="item">
-    <a href="{{ url_for('listing', item_id=item.id) }}" class="item-link">
+    <a href="{{ url_for('market.listing', item_id=item.id) }}" class="item-link">
       <div class="item-col-1">
         {% if item.photos.first() is not none %}
           {% set photo = item.photos.first() %}
