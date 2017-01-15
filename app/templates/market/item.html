@@ -50,8 +50,10 @@
 
       {% if g.user.is_authenticated() %}
       <button class="item-button item-flag" onclick="flag_item('{{g.user.id}}', '{{ item.id }}')">
-      {% else %}
+      {% elif g.user.is_anonymous() %}
       <button class="item-button item-flag" onclick="flag_item('-1', '{{ item.id }}')">
+      {% else %}
+      <button class="item-button item-flag" onclick="alert('Error 333')">
       {% endif %}
         <i class="item-flag-icon fa fa-flag" aria-hidden="true"></i>
         <p class="item-flag-text">flag</p>

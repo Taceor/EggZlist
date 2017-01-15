@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+{% block content %}
+<h1 class="home-title">Admin Web Portal</h1>
+<p class="home-motto">Administrate away!</p>
+
+<ul>
+{% for item in flagged_items %}
+    <li><a href="{{ url_for('market.listing', item_id=item.id) }}">{{ item.title }}</a> has {{ item.flags }} flags.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

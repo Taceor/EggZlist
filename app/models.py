@@ -35,6 +35,7 @@ class Item(db.Model):
         self.description = description
         self.user_id = user_id
         self.has_photos = False
+        self.flags = 0
 
     def __repr__(self):
         return "<{} {}>".format(self.__class__.__name__, self.title)
@@ -67,6 +68,8 @@ class User(db.Model):
     verfied_on = db.Column(db.DateTime)
     sent_verification_on = db.Column(db.DateTime)
 
+    is_admin = db.Column(db.Boolean, default=False)
+
     # # VENDOR STUFF # #
     is_vendor = db.Column(db.Boolean, default=False)
     viewable = db.Column(db.Boolean)
@@ -85,6 +88,7 @@ class User(db.Model):
         self.email = email
         self.set_password(password)
         self.registered_on = datetime.now()
+        self.is_admin = False
 
     def set_password(self, password):
         self.pw_hash = generate_password_hash(password)

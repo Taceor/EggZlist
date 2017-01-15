@@ -5,6 +5,7 @@ from .views.home import home
 from .views.auth import auth
 from .views.market import market
 from .views.community import comm
+from .views.admin import admin
 
 resize = flask_resize.Resize()
 
@@ -22,6 +23,7 @@ def create_app(config_file):
     app.register_blueprint(auth)
     app.register_blueprint(market)
     app.register_blueprint(comm)
+    app.register_blueprint(admin)
     app.debug = True
 
     from app.login_manager import lm

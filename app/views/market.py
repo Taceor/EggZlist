@@ -164,11 +164,6 @@ def delete_listing(item_id):
 def flag_item():
     item_id = request.args.get('item_id')
     user_id = request.args.get('user_id')
-    if user_id is not -1:
-        user = User.query.get(user_id)
-    else:
-        pass
-        #TODO: Anonymous user reports
     item = Item.query.get(item_id)
     if item is not None:
         item.flags = Item.flags + 1 
@@ -234,8 +229,8 @@ def markmap():
 
 @market.route("/listing/<item_id>")
 def listing(item_id):
-    if item_id is not None:
-        item = Item.query.get(item_id)
+    item = Item.query.get(item_id)
+    if item is not None:
         delta = datetime.datetime.today() - item.post_date
         return render_template("market/listing.html", buy="active", item=item, days=delta.days)
     else:
