@@ -2,7 +2,7 @@
 <div class="item-wrapper">
   
   <div class="item">
-    <a href="{{ url_for('listing', item_id=item.id) }}" class="item-link">
+    <a href="{{ url_for('market.listing', item_id=item.id) }}" class="item-link">
       <div class="item-col-1">
         {% if item.photos.first() is not none %}
           {% set photo = item.photos.first() %}
@@ -50,8 +50,10 @@
 
       {% if g.user.is_authenticated() %}
       <button class="item-button item-flag" onclick="flag_item('{{g.user.id}}', '{{ item.id }}')">
-      {% else %}
+      {% elif g.user.is_anonymous() %}
       <button class="item-button item-flag" onclick="flag_item('-1', '{{ item.id }}')">
+      {% else %}
+      <button class="item-button item-flag" onclick="alert('Error 333')">
       {% endif %}
         <i class="item-flag-icon fa fa-flag" aria-hidden="true"></i>
         <p class="item-flag-text">flag</p>

@@ -21,19 +21,19 @@
           <div class="toggle-drop">
             <ul class="drop-position">
               <li class="drop-layout">
-                <a href="{{ url_for('profile', username = g.user.username) }}" class="drop-down order1">
+                <a href="{{ url_for('auth.profile', username = g.user.username) }}" class="drop-down order1">
                   <i class="fa fa-user"></i>
                   <p class="nav-text register">Profile</p>
                 </a>
               </li>
               <li class="drop-layout">
-                <a href="{{ url_for('profile_settings') }}" class="drop-down order2">
+                <a href="{{ url_for('auth.profile_settings') }}" class="drop-down order2">
                   <i class="fa fa-cogs"></i>
                   <p class="nav-text register">Settings</p>
                 </a>
               </li>
               <li class="drop-layout">
-                <a href="{{ url_for('logout') }}" class="drop-down order3">
+                <a href="{{ url_for('auth.logout') }}" class="drop-down order3">
                   <i class="fa fa-sign-out"></i>
                   <p class="nav-text register">Logout</p>
                 </a>

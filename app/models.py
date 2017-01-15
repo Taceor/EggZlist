@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, timedelta
-
-from flask import url_for, abort
-from app import app, db
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 saved_posts = db.Table('saved_posts',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
@@ -19,6 +19,7 @@ class Item(db.Model):
     post_date = db.Column(db.DateTime)
     description = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship("User", back_populates="items")
     photos = db.relationship('Photo', backref='item', lazy='dynamic')
     has_photos = db.Column(db.Boolean)
     flags = db.Column(db.Integer)
@@ -34,6 +35,7 @@ class Item(db.Model):
         self.description = description
         self.user_id = user_id
         self.has_photos = False
+        self.flags = 0
 
     def __repr__(self):
         return "<{} {}>".format(self.__class__.__name__, self.title)
@@ -66,6 +68,8 @@ class User(db.Model):
     verfied_on = db.Column(db.DateTime)
     sent_verification_on = db.Column(db.DateTime)
 
+    is_admin = db.Column(db.Boolean, default=False)
+
     # # VENDOR STUFF # #
     is_vendor = db.Column(db.Boolean, default=False)
     viewable = db.Column(db.Boolean)
@@ -77,13 +81,14 @@ class User(db.Model):
     lng = db.Column(db.Float)
     has_phone = db.Column(db.Boolean)
     phone_number = db.Column(db.String(20))
-    items = db.relationship('Item', backref='user', lazy='dynamic')
+    items = db.relationship('Item', back_populates="user")
     
     def __init__(self, username, email, password):
         self.username = username
         self.email = email
         self.set_password(password)
         self.registered_on = datetime.now()
+        self.is_admin = False
 
     def set_password(self, password):
         self.pw_hash = generate_password_hash(password)

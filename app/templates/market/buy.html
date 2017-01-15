@@ -22,12 +22,12 @@
       <h2>Filter Options</h2>
     </div>
     <div class="filter-modal-body">
-        <a href="{{ url_for('buy', filter_type='Dairy') }}">Dairy</a>
-        <a href="{{ url_for('buy', filter_type='Fruit') }}">Fruit</a>
-        <a href="{{ url_for('buy', filter_type='Grain') }}">Grain</a>
-        <a href="{{ url_for('buy', filter_type='Protein') }}">Protein</a>
-        <a href="{{ url_for('buy', filter_type='Vegetable') }}">Vegetable</a>
-        <a href="{{ url_for('buy', filter_type='Other') }}">Other</a>
+        <a href="{{ url_for('market.buy', filter_type='Dairy') }}">Dairy</a>
+        <a href="{{ url_for('market.buy', filter_type='Fruit') }}">Fruit</a>
+        <a href="{{ url_for('market.buy', filter_type='Grain') }}">Grain</a>
+        <a href="{{ url_for('market.buy', filter_type='Protein') }}">Protein</a>
+        <a href="{{ url_for('market.buy', filter_type='Vegetable') }}">Vegetable</a>
+        <a href="{{ url_for('market.buy', filter_type='Other') }}">Other</a>
     </div>
     <div class="filter-modal-footer">
       <h3>footer</h3>
@@ -41,7 +41,7 @@
 
     <div class="search-results">
     {% for item in items %}
-        {% include "buy/item.html" %}
+        {% include "market/item.html" %}
     {% endfor %}
     </div>
   </div>
