@@ -14,17 +14,14 @@ RESIZE_URL = '/static/uploads/'
 RESIZE_ROOT = os.path.join(basedir, 'static/uploads/')
 
 WTF_CSRF_ENABLED = True
-SECRET_KEY = 'T1m55pw4m55FA'
-SECURITY_PASSWORD_SALT = 'Saltines_are_saltier'
-
-#pagination NOT IMPLEMENTED YET
-POSTS_PER_PAGE = 5
+SECRET_KEY = 'public_secret'
+SECURITY_PASSWORD_SALT = 'public_salt'
 
 #Flask-Mail Config
-MAIL_SERVER = 'smtp.zoho.com'
-MAIL_PORT = 465
+MAIL_SERVER = 'localhost'
+MAIL_PORT = 25
 MAIL_USE_TLS = False
-MAIL_USE_SSL = True
-MAIL_USERNAME = 'noreply@eggzlist.com' #SET MANUALLY, KEEP OFF GITHUB
-MAIL_PASSWORD = '!234Abcdnoreply'
-MAIL_DEFAULT_SENDER = 'noreply@eggzlist.com'
+MAIL_USE_SSL = False
+MAIL_USERNAME = 'me@localhost.com'
+MAIL_PASSWORD = 'pusblic_password'
+MAIL_DEFAULT_SENDER = 'me@localhost.com'
