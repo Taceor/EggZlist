@@ -19,6 +19,13 @@ def create_app(config_file):
     with app.app_context():
         db.create_all()
 
+    if config_file == 'config_dev.py':
+        from app.models import User
+        admin_user = User("admin", "admin@eggzlist.com", "Th151553cur3")
+        admin_user.is_admin=True
+        db.session.add(admin_user)
+        db.session.commit()
+
     app.register_blueprint(home)
     app.register_blueprint(auth)
     app.register_blueprint(market)
