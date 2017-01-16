@@ -1435,6 +1435,10 @@ input[type='file'] {
           color: #fed000;
         }
 
+        .item-saved i.item-save-icon {
+          color: #fed000;
+        }
+
         .item-save-text {
           margin: .2em 0 0 0;
         }

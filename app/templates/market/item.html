@@ -39,13 +39,21 @@
     <div class="item-col-3">
       <p class="item-number">#</p>
       {% if g.user.is_authenticated() %}
-      <button class="item-button item-save" onclick="save_item('{{ g.user.id }}', '{{ item.id }}')">
+        {% if item in g.user.saves %}
+          <button class="item-button item-saved">
+        {% else %}
+          <button class="item-button item-save" onclick="save_item('{{ g.user.id }}', '{{ item.id }}')">
+        {% endif %}
       {% else %}
       <button class="item-button item-save" onclick="alert('Please login to save this listing.)'">
       {% endif %}
         
         <i class="item-save-icon fa fa-star" aria-hidden="true"></i>
-        <p class="item-save-text">save</p>
+        {% if item in g.user.saves %}
+          <p class="item-save-text">saved</p>
+        {% else %}  
+          <p class="item-save-text">save</p>
+        {% endif %}
       </button>
 
       {% if g.user.is_authenticated() %}
