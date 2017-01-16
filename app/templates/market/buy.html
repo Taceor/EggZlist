@@ -40,8 +40,12 @@
     <div class="map-container" id="googleMap"></div>
 
     <div class="search-results">
+    {% set count = 0 %}
     {% for item in items %}
+        {% set count = count + 1 %}
+        {% with list_number=count%}
         {% include "market/item.html" %}
+        {% endwith %}
     {% endfor %}
     </div>
   </div>

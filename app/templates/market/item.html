@@ -37,7 +37,7 @@
     <!-- END .item-link -->
     
     <div class="item-col-3">
-      <p class="item-number">#</p>
+      <p class="item-number">{{ list_number }}</p>
       {% if g.user.is_authenticated() %}
         {% if item in g.user.saves %}
           <button class="item-button item-saved">
