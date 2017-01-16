@@ -2,20 +2,9 @@
 {% block content %}
 <div class="buy-layout">
   <div class="buy-spacing-listing">
-    <a href="/buy">
-      <button name="button" class="back-search">
-        <p class="back-button"><i class="fa fa-arrow-left search-arrow"></i>Back to listings</p>
-      </button>
-    </a>
-    {% if item.user.id == g.user.id %}
-      <div class="row listing-edit">
-        <a href="{{ url_for('market.edit', item_id=item.id) }}"><h2>[[ Click here to edit this post ]]</h2></a>
-        <br>
-      </div>
-    {% endif %}
     {% if item.user.is_admin %}
       <div class="row listing-admin-delete">
-        <a href="{{ url_for('admin.inspect', item_id=item.id) }}"><h2>[[ Click here to inspect this post ]]</h2></a>
+        <a href="{{ url_for('admin.delete', item_id=item.id) }}"><h2>[[ Click here to delete this post ]]</h2></a>
       </div>
     {% endif %}
     <div class="row listing-title-price">
