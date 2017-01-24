@@ -6,6 +6,7 @@ from .views.auth import auth
 from .views.market import market
 from .views.community import comm
 from .views.admin import admin
+#from config_dev import config
 
 resize = flask_resize.Resize()
 
@@ -21,7 +22,7 @@ def create_app(config_file):
 
     if config_file == 'config_dev.py':
         from app.models import User
-        admin_user = User("admin", "admin@eggzlist.com", "Th151553cur3")
+        admin_user = User("admin", "admin@eggzlist.com", "Th1515NOT53cur3")
         admin_user.is_admin=True
         db.session.add(admin_user)
         db.session.commit()

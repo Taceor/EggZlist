@@ -26,3 +26,7 @@ MAIL_USERNAME = None
 MAIL_PASSWORD = None
 MAIL_DEFAULT_SENDER = 'noreply@eggzlist.com'
 MAIL_SUPPRESS_SEND = True
+
+#Celery
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
