@@ -6,6 +6,7 @@ from .views.auth import auth
 from .views.market import market
 from .views.community import comm
 from .views.admin import admin
+#from config_dev import config
 
 resize = flask_resize.Resize()
 
@@ -18,6 +19,13 @@ def create_app(config_file):
     db.init_app(app)
     with app.app_context():
         db.create_all()
+
+    if config_file == 'config_dev.py':
+        from app.models import User
+        admin_user = User("admin", "admin@eggzlist.com", "Th1515NOT53cur3")
+        admin_user.is_admin=True
+        db.session.add(admin_user)
+        db.session.commit()
 
     app.register_blueprint(home)
     app.register_blueprint(auth)
