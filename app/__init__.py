@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 import flask_resize
+import flask_whooshalchemy as whooshalchemy
 from .views.home import home
 from .views.auth import auth
 from .views.market import market
@@ -43,6 +44,9 @@ def create_app(config_file):
     mail.init_app(app)
     
     resize.init_app(app)
+
+    from app.models import Item
+    whooshalchemy.whoosh_index(app, Item)
 
     return app
 
