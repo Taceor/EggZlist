@@ -28,3 +28,19 @@ Built using the Flask micro-framework for Python.
 ###**BOOM** just like that, you're done.
 
 ## Remember to delete any directories in static/uploads when refreshing the DB
+
+
+#Instructions for using Gulp and Sass with Nodejs
+
+1) Install Nodejs (This installs Nodejs version 7, but other versions should work too)
+
+    curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+2) Install Gulp globally
+
+    sudo npm install gulp -g
+
+3) To process SCSS files and use other Gulp utiltilies designated in gulpfile.js use
+
+    gulp
