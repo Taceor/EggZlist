@@ -17,9 +17,11 @@
         <form action="" method="post" name="search">
             {{ form.hidden_tag() }}
             <p>
+                <!--
                 Min Price: {{ form.min_price() }}
                 Max Price: {{ form.max_price() }}
                 Categories: {{ form.categories() }}
+                -->
                 Query: {{ form.query() }}
                 <input type="submit" value="Search">
             </p>
