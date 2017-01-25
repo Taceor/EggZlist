@@ -4,6 +4,7 @@ migrations/
 app/uploads/*.jpg
 flask/
 app.db
+app.db-journal
 whoosh_index/
 *.pyc
 app/*.pyc

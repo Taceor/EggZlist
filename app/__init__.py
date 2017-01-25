@@ -24,7 +24,9 @@ def create_app(config_file):
     if config_file == 'config_dev.py':
         from app.models import User
         admin_user = User("admin", "admin@eggzlist.com", "Th1515NOT53cur3")
-        admin_user.is_admin=True
+        admin_user.is_admin = True
+        admin_user.zipcode = 80915
+        admin_user.viewable = True
         db.session.add(admin_user)
         db.session.commit()
 
