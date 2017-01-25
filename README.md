@@ -41,7 +41,7 @@ Built using the Flask micro-framework for Python.
 
     sudo npm install gulp -g
 
-##(This assumes a package.json file, gulpfile.js, and node_modules folder exists!)
+####(This assumes a package.json file, gulpfile.js, and node_modules folder exists!)
 
 3) To process SCSS files and use other Gulp utiltilies designated in gulpfile.js use
 
