@@ -9,7 +9,7 @@ from sqlalchemy import asc, desc
 from flask import Blueprint, redirect, url_for, current_app, request,\
                   flash, render_template, g, session, send_from_directory,\
                   jsonify
-from config import SECRET_KEY
+from app.config import SECRET_KEY
 from app.models import Item, User, Photo, db
 from app.forms import ContactInfoForm, ItemInfoForm, LoginForm, NewUserForm,\
                   AboutUserForm, ListingPhotosForm
