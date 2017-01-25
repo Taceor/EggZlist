@@ -31,6 +31,7 @@ Built using the Flask micro-framework for Python.
 
 
 #Instructions for using Gulp and Sass with Nodejs
+(This assumes a package.json file and node_modules folder exists!)
 
 1) Install Nodejs (This installs Nodejs version 7, but other versions should work too)
 
