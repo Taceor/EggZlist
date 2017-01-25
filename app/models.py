@@ -2,6 +2,7 @@
 from datetime import datetime, timedelta
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
+import flask_whooshalchemy 
 
 db = SQLAlchemy()
 
@@ -11,6 +12,9 @@ saved_posts = db.Table('saved_posts',
     )
 
 class Item(db.Model):
+    __tablename__ = 'item'
+    __searchable__ = ['title', 'description']
+
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200))
     category = db.Column(db.String(200))

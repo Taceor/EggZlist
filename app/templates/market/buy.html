@@ -1,7 +1,7 @@
 {% extends "base.html"%}
 {% block content %}
 <script src="{{ url_for('static', filename='js/populate_map.js') }}"></script>
-<div class="row buy">
+<!--
   <div class="search">
     <i class="fa fa-search"></i>
     <input class="post-input zipcode buy-margin" type="text" name="title" placeholder="Zip Code">
@@ -10,11 +10,26 @@
     <button id="filter-button" href="/buy/filter" type="button" name="button">
       <p data-toggle="tooltip" data-placement="bottom" title="<strong>TEST</strong>" html="true">Filter <i class="fa fa-sliders sliders"></i></p>
     </button>
-    <!-- <p><a id="filter" href="#">Filter <i class="fa fa-sliders sliders"></i></a></p> -->
   </div>
+-->
+<div class="row buy">
+    <div class="filters">
+        <form action="" method="post" name="search">
+            {{ form.hidden_tag() }}
+            <p>
+                <!--
+                Min Price: {{ form.min_price() }}
+                Max Price: {{ form.max_price() }}
+                Categories: {{ form.categories() }}
+                -->
+                Query: {{ form.query() }}
+                <input type="submit" value="Search">
+            </p>
+        </form>
+    </div>
 </div>
 
-<!-- Filter Modal -->
+<!-- Filter Modal
 <div id="filter-modal-js" class="filter-modal">
   <div class="filter-modal-content">
     <div class="filter-modal-header">
@@ -22,18 +37,13 @@
       <h2>Filter Options</h2>
     </div>
     <div class="filter-modal-body">
-        <a href="{{ url_for('market.buy', filter_type='Dairy') }}">Dairy</a>
-        <a href="{{ url_for('market.buy', filter_type='Fruit') }}">Fruit</a>
-        <a href="{{ url_for('market.buy', filter_type='Grain') }}">Grain</a>
-        <a href="{{ url_for('market.buy', filter_type='Protein') }}">Protein</a>
-        <a href="{{ url_for('market.buy', filter_type='Vegetable') }}">Vegetable</a>
-        <a href="{{ url_for('market.buy', filter_type='Other') }}">Other</a>
     </div>
     <div class="filter-modal-footer">
       <h3>footer</h3>
     </div>
   </div>
 </div>
+-->
 
 <div class="buy-layout">
   <div class="buy-spacing">

@@ -5,6 +5,16 @@ from wtforms import TextAreaField, StringField, SelectMultipleField, FileField,\
                     FormField, FieldList
 from wtforms.validators import InputRequired, Optional, Length, Email
 
+categories = [('Dairy', 'Dairy'), ('Fruit', 'Fruit'), ('Vegetable', 'Vegetable'), ('Grain', 'Grain'), ('Protein', 'Protein'), ('Other', 'Other')]
+
+class SearchForm(Form):
+    query = StringField('Query', [InputRequired()])
+    min_price = StringField('Low Price')
+    max_price = StringField('High Price')
+    max_distance = StringField('Max Distance')
+    categories = SelectMultipleField('Categories', choices=categories)
+    price_type = StringField('Price Type')
+
 class ContactInfoForm(Form):
     email = StringField('Email', [InputRequired(), Email()])
     confirm = StringField('Confirm', [InputRequired()])
@@ -18,7 +28,7 @@ class ContactInfoForm(Form):
 
 class ItemInfoForm(Form):
     title = StringField('Title', [InputRequired()])
-    category = SelectField('Category', choices=[('Dairy', 'Dairy'), ('Fruit', 'Fruit'), ('Vegetable', 'Vegetable'), ('Grain', 'Grain'), ('Protein', 'Protein'), ('Other', 'Other')])
+    category = SelectField('Category', choices=categories)
     price = StringField('Price', [InputRequired()])
     price_type = SelectField('Price Type', choices=[('total', 'Total'), ('each', 'Each')])
     description = TextAreaField('Description')

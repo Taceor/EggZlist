@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 import flask_resize
+import flask_whooshalchemy as whooshalchemy
 from .views.home import home
 from .views.auth import auth
 from .views.market import market
@@ -23,7 +24,9 @@ def create_app(config_file):
     if config_file == 'config_dev.py':
         from app.models import User
         admin_user = User("admin", "admin@eggzlist.com", "Th1515NOT53cur3")
-        admin_user.is_admin=True
+        admin_user.is_admin = True
+        admin_user.zipcode = 80915
+        admin_user.viewable = True
         db.session.add(admin_user)
         db.session.commit()
 
@@ -43,6 +46,9 @@ def create_app(config_file):
     mail.init_app(app)
     
     resize.init_app(app)
+
+    from app.models import Item
+    whooshalchemy.whoosh_index(app, Item)
 
     return app
 

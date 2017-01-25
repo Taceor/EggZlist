@@ -38,7 +38,7 @@
     
     <div class="item-col-3">
       <p class="item-number">{{ list_number }}</p>
-      {% if g.user.is_authenticated() %}
+      {% if g.user.is_authenticated %}
         {% if item in g.user.saves %}
           <button class="item-button item-saved">
         {% else %}
@@ -56,9 +56,9 @@
         {% endif %}
       </button>
 
-      {% if g.user.is_authenticated() %}
+      {% if g.user.is_authenticated %}
       <button class="item-button item-flag" onclick="flag_item('{{g.user.id}}', '{{ item.id }}')">
-      {% elif g.user.is_anonymous() %}
+      {% elif g.user.is_anonymous %}
       <button class="item-button item-flag" onclick="flag_item('-1', '{{ item.id }}')">
       {% else %}
       <button class="item-button item-flag" onclick="alert('Error 333')">
