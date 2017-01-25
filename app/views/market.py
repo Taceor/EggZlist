@@ -13,7 +13,7 @@ from flask import Blueprint, redirect, url_for, current_app, request,\
 from config import SECRET_KEY
 from app.models import Item, User, Photo, db
 from app.forms import ContactInfoForm, ItemInfoForm, LoginForm, NewUserForm,\
-                  AboutUserForm, ListingPhotosForm
+                  AboutUserForm, ListingPhotosForm, SearchForm
 from flask_login import login_required, login_user, logout_user, current_user
 from flask_mail import Message
 from werkzeug import secure_filename
@@ -188,28 +188,14 @@ def save_item():
         worked=True
     return jsonify(worked=worked)
 
-@market.route("/buy")
-@market.route("/buy/<filter_type>")
-def buy(filter_type=None):
-    if filter_type is not None:
-        if filter_type == "dairy" or filter_type == "Dairy":
-            items = Item.query.filter_by(category="Dairy").order_by(Item.post_date.desc()).all()
-        elif filter_type == "protein" or filter_type == "Protein":
-            items = Item.query.filter_by(category="Protein").order_by(Item.post_date.desc()).all()
-        elif filter_type == "vegetable" or filter_type == "Vegetable":
-            items = Item.query.filter_by(category="Vegetable").order_by(Item.post_date.desc()).all()
-        elif filter_type == "fruit" or filter_type == "Fruit":
-            items = Item.query.filter_by(category="Fruit").order_by(Item.post_date.desc()).all()
-        elif filter_type == "grain" or filter_type == "Grain":
-            items = Item.query.filter_by(category="Grain").order_by(Item.post_date.desc()).all()
-        elif filter_type == "other" or filter_type == "Other":
-            items = Item.query.filter_by(category="Other").order_by(Item.post_date.desc()).all()
-        else:
-            flash("Error: Bad Filter")
-            items = Item.query.order_by(Item.post_date.desc()).all()
+@market.route("/buy", methods=['GET', 'POST'])
+def buy():
+    form = SearchForm()
+    if form.validate_on_submit():
+        items = Item.query.whoosh_search(form.query.data).all()
     else:
         items = Item.query.order_by(Item.post_date.desc()).all()
-    return render_template("market/buy.html", buy="active", items=items)
+    return render_template("market/buy.html", buy="active", items=items, form=form)
 
 @market.route("/_markmap")
 def markmap():
