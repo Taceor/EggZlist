@@ -1,22 +1,18 @@
-<div class="full-width-header">
-  <header class="header-position">
+<div class="header-fixed">
+  <header class="header-width">
     <nav class="header-layout">
-      <ul class="nav-position">
-        <li class="nav-layout">
+      <ul class="nav-row">
+        <li class="nav-tabs">
           <a href="/" class="nav-item {{home}}">
-            <div class="nav-info">
-              <i class="icon-EggZlist-logo"></i>
-              <p class="nav-text" id="text-smaller">Home</p>
-            </div>
+            <i class="icon-EggZlist-logo"></i>
+            <p class="nav-text" id="text-smaller">Home</p>
           </a>
         </li>
         {% if g.user.is_authenticated %}
-        <li class="nav-layout">
+        <li class="nav-tabs">
           <div class="nav-item {{profile}}">
-            <div class="nav-info">
-              <i class="fa fa-arrow-down fa-2x nav-icon"></i>
-              <p class="nav-text" id="text-smaller">Profile</p>
-            </div>
+            <i class="fa fa-arrow-down nav-icon"></i>
+            <p class="nav-text" id="text-smaller">Profile</p>
           </div>
           <div class="toggle-drop">
             <ul class="drop-position">
@@ -42,12 +38,10 @@
           </div>
         </li>
         {% else %}
-        <li class="nav-layout">
+        <li class="nav-tabs">
           <div class="nav-item {{login}}">
-            <div class="nav-info">
-              <i class="fa fa-arrow-down fa-2x nav-icon"></i>
-              <p class="nav-text" id="text-smaller">Login</p>
-            </div>
+            <i class="fa fa-arrow-down nav-icon"></i>
+            <p class="nav-text" id="text-smaller">Login</p>
           </div>
           <div class="toggle-drop">
             <ul class="drop-position">
@@ -67,28 +61,22 @@
           </div>
         </li>
         {% endif %}
-        <li class="nav-layout">
+        <li class="nav-tabs">
           <a href="/community" class="nav-item {{community}}">
-            <div class="nav-info">
-              <i class="fa fa-users fa-2x nav-icon"></i>
-              <p class="nav-text community" id="text-smaller">Forum</p>
-            </div>
+            <i class="fa fa-users nav-icon"></i>
+            <p class="nav-text community" id="text-smaller">Forum</p>
           </a>
         </li>
-        <li class="nav-layout">
+        <li class="nav-tabs">
           <a href="/sell" class="nav-item {{sell}}">
-            <div class="nav-info">
-              <i class="fa fa-usd fa-2x nav-icon"></i>
-              <p class="nav-text">Sell</p>
-            </div>
+            <i class="fa fa-usd nav-icon"></i>
+            <p class="nav-text">Sell</p>
           </a>
         </li>
-        <li class="nav-layout">
+        <li class="nav-tabs">
           <a href="/buy" class="nav-item {{buy}}">
-            <div class="nav-info">
-              <i class="fa fa-shopping-basket fa-2x nav-icon"></i>
-              <p class="nav-text">Buy</p>
-            </div>
+            <i class="fa fa-shopping-basket nav-icon"></i>
+            <p class="nav-text">Buy</p>
           </a>
         </li>
       </ul>

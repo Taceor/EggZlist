@@ -80,13 +80,13 @@ a {
 
 .icon-EggZlist-logo:before {
   content: "\e900";
-  font-size: 2.5em; }
+  font-size: 1em; }
 
 /* End custom icon font */
 /* start header config */
 /* Fixes the header to top of screen, also centers is and gives max-width
   z-index is for the fixed portion, so it shows above background */
-.full-width-header {
+.header-fixed {
   position: fixed;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
   background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
@@ -101,45 +101,26 @@ a {
   box-shadow: 0 .2em .5em #707070;
   top: 0;
   left: 0;
-  right: 0;
-  margin: 0 auto;
-  z-index: 1344; }
+  right: 0; }
 
-.header-position {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 75em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+.header-width {
+  max-width: 60em;
   z-index: 1337;
   margin-left: auto;
   margin-right: auto; }
 
 .header-layout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%; }
 
 /*Lines up navigation tabs*/
-.nav-position {
-  width: 100%;
+.nav-row {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
   background-color: #245827;
   font-family: "Arial Black", Gadget, sans-serif; }
 
 /* forms the actual sizes of the header boxes with flex-grow: 1*/
-.nav-layout {
-  display: flex;
-  height: 3.5em;
+.nav-tabs {
   width: 20%;
-  margin: 0;
-  padding: 0;
   position: relative;
   background-color: #3b8e3f; }
 
@@ -148,8 +129,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3.5em;
-  flex-grow: 1;
+  height: 2.5em;
   background-color: #3b8e3f;
   letter-spacing: .02em;
   font-weight: 500;
@@ -174,7 +154,8 @@ a {
 
 .nav-info {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 /* starting dropdown config */
 .drop-layout {
@@ -214,7 +195,7 @@ a {
   top: 8.5em; }
 
 /* this is very important for display of the dropdown on hover */
-.nav-layout:hover > div > ul > li > a {
+.nav-tabs:hover > div > ul > li > a {
   display: flex; }
 
 /* these are styles for the dropdown itself */
