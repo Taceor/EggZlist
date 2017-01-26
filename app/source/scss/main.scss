@@ -1,3 +1,4 @@
+@import 'global-vars';
 @import 'base/reset';
 @import 'components/navigation';
 
@@ -375,20 +376,20 @@ input[type='file'] {
 
 /* start buy section */
 .buy {
-  margin-top: 1.5em;
+  // margin-top: 1.5em;
 }
 
 .row.buy {
   position: fixed;
   z-index: 1336;
-  top: 2.7em;
+  top: $nav-height;
   left: 0;
   right: 0;
   margin: 0 auto;
   justify-content: space-around;
   align-items: center;
   padding-bottom: .35em;
-  font-size: 1.3em;
+  font-size: 1em;
   padding-top: .35em;
   width: 100%;
   box-shadow: 0 .1em .2em -2px #707070;
@@ -410,6 +411,10 @@ input[type='file'] {
 
 .search {
   max-width: 45em;
+}
+
+.search2 {
+  margin: 0;
 }
 
 .buy-spacing {
