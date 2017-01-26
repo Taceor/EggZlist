@@ -1,4 +1,4 @@
-/* Custom Icon */
+// Custom Icon */
 /* Creates the cutom EggZlist logo. Generated from iconmoon.io */
 @font-face {
     font-family: 'icomoon';
@@ -111,15 +111,6 @@
   background-color: #245827;
 }
 
-.nav-info {
-  // creates flexbox for icon and text
-  display: flex;
-  // align critical
-  align-items: center;
-  // align critical
-  justify-content: center;
-}
-
 /* starting dropdown config */
 .drop-layout {
   display: flex;
@@ -128,11 +119,12 @@
 /* main dropdown config */
 .drop-down {
   display: none;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
-  left: 0em;
+  // left: 0em;
   position: absolute;
   width: 100%;
+  // height of individual drop down tab
   height: 2.5em;
   letter-spacing: .02em;
   box-shadow: .2em .2em .5em #707070;
@@ -146,6 +138,7 @@
 }
 
 /* .order places the height for the dropdown menu */
+// will redo these to calculate with variables
 .order1 {
   top: 3.5em;
 }
@@ -158,7 +151,8 @@
   top: 8.5em;
 }
 
-/* this is very important for display of the dropdown on hover */
+// this is very important for display of the dropdown on hover
+// This is critical and doesn't seem to work with id's either
 .nav-tabs:hover > div > ul > li > a {
   display: flex;
 }
@@ -176,119 +170,11 @@
 
 /* Icon and name spacing in header nav-info */
 .nav-text {
-  margin-left: .9em;
-}
-
-/* moves the arrow in login nav-box to the right */
-.register-arrow {
+  // gives spacing from icon
   margin-left: .9em;
 }
 
 /* Below are media queries to make the header mobile responsive */
 @media (max-width: 700px) {
-  body {
-    padding-top: 4em;
-  }
-  .nav-layout {
-    height: 4em;
-  }
-  .nav-item {
-    height: 4em;
-  }
-  .nav-info {
-    flex-direction: column;
-    align-items: center;
-  }
-  .icon-EggZlist-logo {
-    font-size: .85em;
-  }
-  .nav-text {
-    margin-left: 0;
-    margin-top: .2em;
-  }
-  .login-margin {
-    margin-left: .9em;
-  }
-  .nav-text.register {
-    margin-left: .9em;
-  }
-  .order1 {
-    top: 4em;
-  }
-  .order2 {
-    top: 6.5em;
-  }
-  .order3 {
-    top: 9em;
-  }
 }
-
-@media (max-width: 580px) {
-  .drop-down {
-    width: 110%;
-  }
-}
-
-@media (max-width: 550px) {
-  .drop-down {
-    width: 120%;
-  }
-}
-
-@media (max-width: 500px) {
-  #text-smaller {
-    font-size: .9em;
-  }
-  .drop-down {
-    width: 130%;
-  }
-}
-
-@media (max-width: 485px) {
-  .drop-down {
-    width: 140%;
-  }
-}
-
-@media (max-width: 435px) {
-  .drop-down {
-    width: 150%;
-  }
-}
-
-@media (max-width: 385px) {
-  .drop-down {
-    width: 160%;
-  }
-}
-
-@media (max-width: 375px) {
-  .drop-down {
-    width: 165%;
-  }
-}
-
-@media (max-width: 365px) {
-  .nav-icon {
-    font-size: 1.8em;
-  }
-  .drop-down {
-    width: 170%;
-  }
-  .icon-EggZlist-logo {
-    font-size: .75em;
-  }
-}
-
-@media (max-width: 350px) {
-  .nav-text {
-    font-size: .8em;
-  }
-  #text-smaller {
-    font-size: .75em;
-  }
-  .drop-down {
-    width: 180%;
-  }
-}
-/* End header config */
+// End header config
