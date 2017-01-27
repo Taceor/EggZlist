@@ -221,7 +221,6 @@ a {
   .order3 {
     top: 8em; } }
 
-/* start main body */
 .content {
   max-width: 25em;
   top: 0;
@@ -229,299 +228,116 @@ a {
   right: 0;
   margin: 0 auto; }
 
+.alpha {
+  color: red; }
+
+.alpha-warning {
+  color: white; }
+
+.alpha-flash {
+  background-color: red;
+  background-color: rgba(183, 28, 28, 0.6);
+  border-radius: 1em;
+  margin: 1em;
+  padding: .7em;
+  box-shadow: 0 .5em .3em -7px #707070; }
+
+.flash {
+  background-color: white;
+  background-color: rgba(0, 128, 43, 0.7);
+  border-radius: 1em;
+  margin: 1em;
+  padding: .7em;
+  box-shadow: 0 .5em .3em -7px #707070;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-left: 1em; }
+
+/* Begin footer section */
+.footer-info {
+  align-items: center;
+  /*justify-content: space-between;*/
+  margin-top: .3em;
+  margin-bottom: .3em; }
+
+/* sticky footer and centering */
+.footer-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2.5em;
+  margin: 0 auto;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+  background: white;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, white 0%, #f6f6f6 47%, #ededed 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+  /* IE6-9 */ }
+
+.footer-position-2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  max-width: 75em;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 10;
+  font-family: "Arial Black", Gadget, sans-serif; }
+
+.footer-layout-2 {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+
+.section {
+  display: flex;
+  height: 2.5em;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+
+#footer-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: black;
+  flex-grow: 9;
+  /*background-color: #6C7A89;*/ }
+
+.company {
+  margin-left: .4em; }
+
+#footer-social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1; }
+
+.facebook-icon {
+  margin-left: 10%;
+  color: #3b5998; }
+
+.twitter-icon {
+  color: #4099FF; }
+
+.twitter-icon:hover {
+  color: #4099FF; }
+
+.facebook-icon:hover {
+  color: #3b5998; }
+
 .main-layout {
   font-family: Arial, Helvetica, sans-serif; }
 
-.login-layout {
-  max-width: 25em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.buy-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.sell-layout {
-  max-width: 25em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.listing-layout {
-  max-width: 50em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.profile-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.settings-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-top: 1em; }
-
-.about-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-h1.welcome {
-  text-align: center; }
-
-/* end main body */
-/* Start home page */
-.home-title {
-  text-align: center; }
-
-.home-motto {
-  text-align: center; }
-
-/* End home page */
-/* Start Profile page */
-.profile-listing {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
-
-.profile-width {
-  width: 85%; }
-
-.settings-margin {
-  margin-left: 1em; }
-
-.profile-settings {
-  color: black;
-  display: flex;
-  flex-direction: row;
-  padding: .3em; }
-
-.profile-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1em; }
-
-.profile-delete {
-  display: flex;
-  flex-direction: column; }
-
-/* End profile poge */
-/* Start settings page */
-.delete-account {
-  margin-top: .5em;
-  margin-bottom: .5em; }
-
-.warning {
-  color: red;
-  margin-bottom: .5em; }
-
-/* End settings page */
-/* Start about page */
-.about-position {
-  margin-top: 1em;
-  margin-left: .4em;
-  margin-right: .4em;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-/* End about page */
-/* start sell forms (posting) */
-.row.options {
-  justify-content: space-around; }
-
-.step-boxes {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: .5em; }
-
-.step {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: .5em;
-  padding: .3em;
-  margin-bottom: 0; }
-
-.rectangle {
-  background-color: #2E7D32;
-  height: .2em; }
-
-.step.in-progress {
-  color: rgba(0, 0, 0, 0.5); }
-
-.step.incomplete {
-  color: rgba(0, 0, 0, 0.25); }
-
-.check {
-  margin-left: .4em; }
-
-.required-notice {
-  align-self: center;
-  font-size: 1.2em;
-  margin-top: .3em;
-  margin-bottom: .5em; }
-
-.post-form {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.3em;
-  margin-left: .4em;
-  margin-right: .4em;
-  margin-bottom: 1.5em; }
-
-.post-step {
-  font-size: 1.9em;
-  text-align: center;
-  margin: .5em; }
-
-@media (max-width: 475px) {
-  .post-step {
-    font-size: 1.6em;
-    text-align: center; } }
-
-.disabled {
-  color: transparent;
-  text-shadow: 0 0 0 #bfbfbf; }
-
-.post-input {
-  border-style: none;
-  background-color: white;
-  font-size: 1em;
-  padding: .3em;
-  margin-bottom: .5em; }
-
-.post-input-2 {
-  font-size: 1em;
-  padding: .3em;
-  margin-bottom: .5em; }
-
-.inline-checkbox {
-  display: flex;
-  justify-content: center; }
-
-.inline-checkbox.contact {
-  display: flex;
-  justify-content: flex-start; }
-
-.check-all {
-  margin-bottom: .5em; }
-
-.contact-margin {
-  margin-bottom: .5em; }
-
-.required {
-  color: red; }
-
-.zipcode {
-  width: 7em; }
-
-.state {
-  width: 4em; }
-
-input.phone-3 {
-  width: 2em; }
-
-input.phone-4 {
-  width: 3em; }
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: .75em; }
-
-.together {
-  display: flex;
-  flex-direction: row; }
-
-#cancel {
-  padding: .3em;
-  color: black; }
-
-#back {
-  padding: .3em;
-  color: black; }
-
-#confirm-button {
-  padding: .3em;
-  color: black; }
-
-#submit {
-  padding: .3em;
-  color: black; }
-
-.cancel.rectangle {
-  background-color: #c62828;
-  height: .3em; }
-
-.next.rectangle {
-  height: .3em; }
-
-.back.rectangle {
-  background-color: #FDD835;
-  height: .3em; }
-
-.confirm.rectangle {
-  height: .3em; }
-
-#next {
-  padding: .3em;
-  color: black; }
-
-#sign-in-button {
-  padding: .3em;
-  color: black; }
-
-.space.column {
-  margin-left: 2em; }
-
-@media (max-width: 375px) {
-  #preview-buttons {
-    font-size: .9em; } }
-
-@media (max-width: 400px) {
-  .space.column {
-    margin-left: .7em; } }
-
-@media (max-width: 340px) {
-  .space.column {
-    margin-left: .4em; } }
-
-.file_upload {
-  display: flex;
-  flex-direction: row; }
-
-@media (max-width: 400px) {
-  .file_upload > .post-input-2 {
-    font-size: .8em; } }
-
-.description {
-  resize: vertical;
-  overflow: auto; }
-
-input[type='file'] {
-  color: transparent; }
-
-/* end sell form */
 /* start buy section */
 .row.buy {
   position: fixed;
@@ -549,11 +365,9 @@ input[type='file'] {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
   /* IE6-9 */ }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .row.buy {
-    top: 3.1em;
-    padding-top: .3em;
-    padding-bottom: .3em; } }
+    top: 3em; } }
 
 .search {
   max-width: 45em; }
@@ -831,178 +645,184 @@ input[type='file'] {
     align-items: center; } }
 
 /* end buy section */
-/* Start login forms */
-.login-container {
-  margin-top: .3em;
-  margin-bottom: 1.5em; }
+/* start sell forms (posting) */
+.row.options {
+  justify-content: space-around; }
 
-.login-container.top {
-  margin-bottom: 0; }
+.step-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: .5em; }
 
-.login-container.bottom {
-  margin-bottom: 0; }
-
-.question-center {
-  text-align: center;
-  font-size: .7em;
-  text-decoration: underline; }
-
-.forgot-password {
-  font-size: .7em;
-  text-decoration: underline; }
-
-.login.rectangle {
-  height: .3em; }
-
-.or {
-  font-size: 1em;
-  margin-top: .6em;
-  margin-bottom: .5em; }
-
-.login-title {
+.step {
   display: flex;
   justify-content: center;
-  font-size: 1.3em;
+  align-items: center;
+  margin: .5em;
+  padding: .3em;
+  margin-bottom: 0; }
+
+.rectangle {
+  background-color: #2E7D32;
+  height: .2em; }
+
+.step.in-progress {
+  color: rgba(0, 0, 0, 0.5); }
+
+.step.incomplete {
+  color: rgba(0, 0, 0, 0.25); }
+
+.check {
+  margin-left: .4em; }
+
+.required-notice {
+  align-self: center;
+  font-size: 1.2em;
   margin-top: .3em;
-  margin-bottom: .3em; }
+  margin-bottom: .5em; }
 
-.login-title.underline {
-  text-decoration: underline; }
+.post-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  margin-left: .4em;
+  margin-right: .4em;
+  margin-bottom: 1.5em; }
 
-.text-center {
-  text-align: center; }
+.post-step {
+  font-size: 1.9em;
+  text-align: center;
+  margin: .5em; }
 
-.sign-in {
+@media (max-width: 475px) {
+  .post-step {
+    font-size: 1.6em;
+    text-align: center; } }
+
+.disabled {
+  color: transparent;
+  text-shadow: 0 0 0 #bfbfbf; }
+
+.post-input {
   border-style: none;
   background-color: white;
   font-size: 1em;
   padding: .3em;
   margin-bottom: .5em; }
 
-/* End login forms */
-/* Begin footer section */
-.footer-info {
-  align-items: center;
-  /*justify-content: space-between;*/
-  margin-top: .3em;
-  margin-bottom: .3em; }
+.post-input-2 {
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em; }
 
-/* sticky footer and centering */
-.footer-wrapper {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 2.5em;
-  margin: 0 auto;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
-  background: white;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, white 0%, #f6f6f6 47%, #ededed 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
-  /* IE6-9 */ }
-
-.footer-position-2 {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
+.inline-checkbox {
   display: flex;
-  max-width: 75em;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 10;
-  font-family: "Arial Black", Gadget, sans-serif; }
+  justify-content: center; }
 
-.footer-layout-2 {
+.inline-checkbox.contact {
   display: flex;
-  width: 100%;
-  align-items: center; }
+  justify-content: flex-start; }
 
-.section {
-  display: flex;
-  height: 2.5em;
-  margin: 0;
-  padding: 0;
-  position: relative; }
+.check-all {
+  margin-bottom: .5em; }
 
-#footer-info {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: black;
-  flex-grow: 9;
-  /*background-color: #6C7A89;*/ }
+.contact-margin {
+  margin-bottom: .5em; }
 
-.alpha {
+.required {
   color: red; }
 
-.alpha-warning {
-  color: white; }
+.zipcode {
+  width: 7em; }
 
-.alpha-flash {
-  background-color: red;
-  background-color: rgba(183, 28, 28, 0.6);
-  border-radius: 1em;
-  margin: 1em;
-  padding: .7em;
-  box-shadow: 0 .5em .3em -7px #707070; }
+.state {
+  width: 4em; }
 
-.flash {
-  background-color: white;
-  background-color: rgba(0, 128, 43, 0.7);
-  border-radius: 1em;
-  margin: 1em;
-  padding: .7em;
-  box-shadow: 0 .5em .3em -7px #707070;
-  margin-top: 1em;
-  margin-right: 1em;
-  margin-left: 1em; }
+input.phone-3 {
+  width: 2em; }
 
-.company {
-  margin-left: .4em; }
+input.phone-4 {
+  width: 3em; }
 
-#footer-social {
+.buttons {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-grow: 1; }
+  justify-content: space-between;
+  margin-top: .75em; }
 
-.facebook-icon {
-  margin-left: 10%;
-  color: #3b5998; }
+.together {
+  display: flex;
+  flex-direction: row; }
 
-.twitter-icon {
-  color: #4099FF; }
+#cancel {
+  padding: .3em;
+  color: black; }
 
-.twitter-icon:hover {
-  color: #4099FF; }
+#back {
+  padding: .3em;
+  color: black; }
 
-.facebook-icon:hover {
-  color: #3b5998; }
+#confirm-button {
+  padding: .3em;
+  color: black; }
 
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
+#submit {
+  padding: .3em;
+  color: black; }
+
+.cancel.rectangle {
+  background-color: #c62828;
+  height: .3em; }
+
+.next.rectangle {
+  height: .3em; }
+
+.back.rectangle {
+  background-color: #FDD835;
+  height: .3em; }
+
+.confirm.rectangle {
+  height: .3em; }
+
+#next {
+  padding: .3em;
+  color: black; }
+
+#sign-in-button {
+  padding: .3em;
+  color: black; }
+
+.space.column {
+  margin-left: 2em; }
+
+@media (max-width: 375px) {
+  #preview-buttons {
+    font-size: .9em; } }
+
+@media (max-width: 400px) {
+  .space.column {
+    margin-left: .7em; } }
+
+@media (max-width: 340px) {
+  .space.column {
+    margin-left: .4em; } }
+
+.file_upload {
+  display: flex;
+  flex-direction: row; }
+
+@media (max-width: 400px) {
+  .file_upload > .post-input-2 {
+    font-size: .8em; } }
+
+.description {
+  resize: vertical;
+  overflow: auto; }
+
+input[type='file'] {
+  color: transparent; }
+
+/* end sell form */
 /* Item 1 */
 .item-spacer {
   margin: 1em 0 1em 0; }
@@ -1128,19 +948,165 @@ i.item-flag-icon {
   margin: .2em 0 0 0; }
 
 /* END Item 1 */
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
-/*-----------------------------------------------------------*/
+/* Start login forms */
+.login-container {
+  margin-top: .3em;
+  margin-bottom: 1.5em; }
+
+.login-container.top {
+  margin-bottom: 0; }
+
+.login-container.bottom {
+  margin-bottom: 0; }
+
+.question-center {
+  text-align: center;
+  font-size: .7em;
+  text-decoration: underline; }
+
+.forgot-password {
+  font-size: .7em;
+  text-decoration: underline; }
+
+.login.rectangle {
+  height: .3em; }
+
+.or {
+  font-size: 1em;
+  margin-top: .6em;
+  margin-bottom: .5em; }
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3em;
+  margin-top: .3em;
+  margin-bottom: .3em; }
+
+.login-title.underline {
+  text-decoration: underline; }
+
+.text-center {
+  text-align: center; }
+
+.sign-in {
+  border-style: none;
+  background-color: white;
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em; }
+
+/* End login forms */
+/* start main body */
+.login-layout {
+  max-width: 25em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+.buy-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+.sell-layout {
+  max-width: 25em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+.listing-layout {
+  max-width: 50em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+.profile-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+.settings-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 1em; }
+
+.about-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+h1.welcome {
+  text-align: center; }
+
+/* end main body */
+/* Start home page */
+.home-title {
+  text-align: center; }
+
+.home-motto {
+  text-align: center; }
+
+/* End home page */
+/* Start Profile page */
+.profile-listing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.profile-width {
+  width: 85%; }
+
+.settings-margin {
+  margin-left: 1em; }
+
+.profile-settings {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  padding: .3em; }
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em; }
+
+.profile-delete {
+  display: flex;
+  flex-direction: column; }
+
+/* End profile poge */
+/* Start settings page */
+.delete-account {
+  margin-top: .5em;
+  margin-bottom: .5em; }
+
+.warning {
+  color: red;
+  margin-bottom: .5em; }
+
+/* End settings page */
+/* Start about page */
+.about-position {
+  margin-top: 1em;
+  margin-left: .4em;
+  margin-right: .4em;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* End about page */

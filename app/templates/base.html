@@ -19,7 +19,8 @@
 </head>
 <body>
 	{% include "includes/header.html" %}
-
+	
+	{# Message flashing #}
 	<div class="content">
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
@@ -34,10 +35,9 @@
 	{% endwith %}
 	</div>
 
-	<main class="main-position">
-	  <div class="main-layout">
+	{# Where all other content is rendered #}
+	<main class="main-layout">
 		{% block content %}{% endblock %}
-	  </div>
 	</main>
 
 	{% include "includes/footer.html" %}

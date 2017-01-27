@@ -1,0 +1,225 @@
+/* start sell forms (posting) */
+.row.options {
+  justify-content: space-around;
+}
+
+.step-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: .5em;
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .5em;
+  padding: .3em;
+  margin-bottom: 0;
+}
+
+.rectangle {
+  background-color: #2E7D32;
+  height: .2em;
+}
+
+.step.in-progress {
+  color: rgba(0, 0, 0, .50);
+}
+
+.step.incomplete {
+  color: rgba(0, 0, 0, .25);
+}
+
+.check {
+  margin-left: .4em;
+}
+
+.required-notice {
+  align-self: center;
+  font-size: 1.2em;
+  margin-top: .3em;
+  margin-bottom: .5em;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  margin-left: .4em;
+  margin-right: .4em;
+  margin-bottom: 1.5em;
+}
+
+.post-step {
+  font-size: 1.9em;
+  text-align: center;
+  margin: .5em;
+}
+
+@media (max-width: 475px) {
+  .post-step {
+    font-size: 1.6em;
+    text-align: center;
+  }
+}
+
+.disabled {
+  color: transparent;
+  text-shadow: 0 0 0 #bfbfbf
+}
+
+.post-input {
+  border-style: none;
+  background-color: white;
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em;
+}
+
+.post-input-2 {
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em;
+}
+
+.inline-checkbox {
+  display: flex;
+  justify-content: center;
+}
+
+.inline-checkbox.contact {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.check-all {
+  margin-bottom: .5em;
+}
+
+.contact-margin {
+  margin-bottom: .5em;
+}
+
+.required {
+  color: red;
+}
+
+.zipcode {
+  width: 7em;
+}
+
+.state {
+  width: 4em;
+}
+
+input.phone-3 {
+  width: 2em;
+}
+
+input.phone-4 {
+  width: 3em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .75em;
+}
+
+.together {
+  display: flex;
+  flex-direction: row;
+}
+
+#cancel {
+  padding: .3em;
+  color: black;
+}
+
+#back {
+  padding: .3em;
+  color: black;
+}
+
+#confirm-button {
+  padding: .3em;
+  color: black;
+}
+
+#submit {
+  padding: .3em;
+  color: black;
+}
+
+.cancel.rectangle {
+  background-color: #c62828;
+  height: .3em;
+}
+
+.next.rectangle {
+  height: .3em;
+}
+
+.back.rectangle {
+  background-color: #FDD835;
+  height: .3em;
+}
+
+.confirm.rectangle {
+  height: .3em;
+}
+
+#next {
+  padding: .3em;
+  color: black;
+}
+
+#sign-in-button {
+  padding: .3em;
+  color: black;
+}
+
+.space.column {
+  margin-left: 2em;
+}
+
+@media (max-width: 375px)  {
+  #preview-buttons {
+    font-size: .9em;
+  }
+}
+
+@media (max-width: 400px) {
+  .space.column {
+    margin-left: .7em;
+  }
+}
+
+@media (max-width: 340px) {
+  .space.column {
+    margin-left: .4em;
+  }
+}
+
+.file_upload {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 400px) {
+  .file_upload>.post-input-2 {
+    font-size: .8em;
+  }
+}
+
+.description {
+  resize: vertical;
+  overflow: auto;
+}
+
+input[type='file'] {
+  color: transparent;
+}
+/* end sell form */

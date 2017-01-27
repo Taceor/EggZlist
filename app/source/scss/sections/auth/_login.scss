@@ -1,0 +1,60 @@
+/* Start login forms */
+.login-container {
+  margin-top: .3em;
+  margin-bottom: 1.5em;
+}
+
+.login-container.top {
+  margin-bottom: 0;
+}
+
+.login-container.bottom {
+  margin-bottom: 0;
+}
+
+.question-center {
+  text-align: center;
+  font-size: .7em;
+  text-decoration: underline;
+}
+
+.forgot-password {
+  font-size: .7em;
+  text-decoration: underline;
+}
+
+.login.rectangle {
+  height: .3em;
+}
+
+.or {
+  font-size: 1em;
+  margin-top: .6em;
+  margin-bottom: .5em;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3em;
+  margin-top: .3em;
+  margin-bottom: .3em;
+}
+
+.login-title.underline {
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sign-in {
+  border-style: none;
+  background-color: white;
+  font-size: 1em;
+  padding: .3em;
+  margin-bottom: .5em;
+}
+
+/* End login forms */

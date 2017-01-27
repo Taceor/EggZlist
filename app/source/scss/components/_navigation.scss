@@ -183,10 +183,6 @@
   margin-left: .7em;
 }
 
-// This is amount nav scrunches up from following media query
-//   when going from row to a column.
-$nav-height-offset: .5em;
-
 // Media queries to make the header mobile responsive
 // Decided to break at 600px because header text was getting cramped
 @media (max-width: 600px) {
