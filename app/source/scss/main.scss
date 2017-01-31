@@ -10,6 +10,7 @@
 // from pages
 @import 'pages/base';
 
+// from sections
 // from sections/market
 @import 'sections/market/buy';
 @import 'sections/market/sell';
@@ -19,136 +20,6 @@
 // from sections/auth
 @import 'sections/auth/login';
 
-/* start main body */
-
-.login-layout {
-  max-width: 25em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-.buy-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-.sell-layout {
-  max-width: 25em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-.listing-layout {
-  max-width: 50em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-.profile-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-.settings-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-top: 1em;
-}
-
-.about-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-h1.welcome {
-  text-align: center;
-}
-/* end main body */
-
-
-/* Start home page */
-.home-title {
-  text-align: center;
-}
-
-.home-motto {
-  text-align: center;
-}
-/* End home page */
-
-/* Start Profile page */
-.profile-listing {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.profile-width {
-  width: 85%;
-}
-
-.settings-margin {
-  margin-left: 1em;
-}
-
-.profile-settings {
-  color: black;
-  display: flex;
-  flex-direction: row;
-  padding: .3em;
-}
-
-.profile-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1em;
-}
-
-.profile-delete {
-  display: flex;
-  flex-direction: column;
-}
-/* End profile poge */
-
-/* Start settings page */
-.delete-account {
-  margin-top: .5em;
-  margin-bottom: .5em;
-}
-
-.warning {
-  color: red;
-  margin-bottom: .5em;
-}
-/* End settings page */
-
-/* Start about page */
-.about-position {
-  margin-top: 1em;
-  margin-left: .4em;
-  margin-right: .4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* End about page */
+// from sections/user
+@import 'sections/user/profile';
+@import 'sections/user/settings';

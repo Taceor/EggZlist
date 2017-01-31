@@ -1,0 +1,44 @@
+
+.profile-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* Start Profile page */
+.profile-listing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-width {
+  width: 85%;
+}
+
+.settings-margin {
+  margin-left: 1em;
+}
+
+.profile-settings {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  padding: .3em;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.profile-delete {
+  display: flex;
+  flex-direction: column;
+}
+/* End profile poge */
