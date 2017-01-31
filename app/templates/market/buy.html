@@ -14,7 +14,7 @@
 -->
 <div class="row buy">
     <div class="filters">
-        <form action="" method="post" name="search">
+        <form action="" method="post" name="search" class="search2">
             {{ form.hidden_tag() }}
             <p>
                 <!--
@@ -22,7 +22,7 @@
                 Max Price: {{ form.max_price() }}
                 Categories: {{ form.categories() }}
                 -->
-                Query: {{ form.query() }}
+                {{ form.query(placeholder="find local food!") }}
                 <input type="submit" value="Search">
             </p>
         </form>
@@ -44,7 +44,6 @@
   </div>
 </div>
 -->
-
 <div class="buy-layout">
   <div class="buy-spacing">
     <div class="map-container" id="googleMap"></div>

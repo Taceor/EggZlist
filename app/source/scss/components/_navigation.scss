@@ -1,0 +1,223 @@
+// Custom Icon 
+/* Creates the cutom EggZlist logo. Generated from iconmoon.io */
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?mm5sx7');
+    src:    url('../fonts/icomoon.eot?mm5sx7#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?mm5sx7') format('truetype'),
+        url('../fonts/icomoon.woff?mm5sx7') format('woff'),
+        url('../fonts/icomoon.svg?mm5sx7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-EggZlist-logo:before {
+    content: "\e900";
+    font-size: 1em;
+}
+/* End custom icon font */
+
+// Start header config
+.header-fixed {
+  // keeps header fixed to top of screen
+  position: fixed;
+  // also keeps header to top, right and left of screen
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1337;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  background-color: #3b8e3f;
+  // shadow underneath the whole header
+  box-shadow: 0 .1em .5em #707070;
+}
+
+.header-width {
+  // defines the max width of the header when there is space
+  max-width: 60em;
+  // auto margins are critical
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-layout {
+  // stretches to fill .header-width to full width of that container
+  width: 100%;
+}
+
+.nav-row {
+  // creates row orientation for nav
+  display: flex;
+  background-color: #245827;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.nav-tabs {
+  // width: keeps each nav tab the same size and fills space
+  width: 20%;
+  // position: relative is critical for dropdown menu to work
+  position: relative;
+  background-color: #3b8e3f;
+}
+
+.nav-item {
+  // creates flex container
+  display: flex;
+  // aligns critical
+  align-items: center;
+  // aligns critical
+  justify-content: center;
+  // defines height of nav tab
+  height: $nav-height;
+  background-color: #3b8e3f;
+  letter-spacing: .02em;
+  font-weight: 500;
+  /*transition: background-color .3s linear 0s;*/
+  color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+/* hover options */
+.nav-item:hover {
+  background-color: #245827;
+}
+
+.active {
+  background-color: #245827;
+}
+
+/* starting dropdown config */
+.drop-layout {
+  display: flex;
+}
+
+/* main dropdown config */
+.drop-down {
+  // initially hide the dropdown
+  display: none;
+  // center align
+  align-items: center;
+  // absolute critical for dropdown to work properly
+  position: absolute;
+  // width critical to make each tab the same width
+  width: 100%;
+  // height of individual drop down tab
+  height: $nav-height;
+  letter-spacing: .02em;
+  box-shadow: .2em .2em .5em #707070;
+  color: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  background-color: #3b8e3f;
+}
+
+// .order places the height for the dropdown menu
+// Height displaced is calculated with $nav-height global var
+.order1 {
+  top: $nav-height;
+}
+
+.order2 {
+  top: $nav-height * 2;
+}
+
+.order3 {
+  top: $nav-height * 3;
+}
+
+// this is very important for display of the dropdown on hover
+// This is critical and doesn't seem to work with ids either
+.nav-tabs:hover > div > ul > li > a {
+  display: flex;
+}
+
+// drop down styles
+.drop-down:hover {
+  box-shadow: .2em .2em .5em #707070;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  background-color: #245827;
+}
+
+.nav-text {
+  // gives spacing from icon
+  margin-left: .9em;
+}
+
+// adjust all header icon settings 
+.nav-icon {
+  color: #ececec;
+}
+
+// adjusts nav tabs from dropdown
+.drop-icon {
+  margin-left: .7em;
+}
+
+// Media queries to make the header mobile responsive
+// Decided to break at 600px because header text was getting cramped
+@media (max-width: 600px) {
+  // stack the nav icons
+  .nav-item {
+    flex-direction: column;
+    height: 3em;
+  }
+  
+  // get rid of spacing from row orientation
+  .nav-text {
+    margin-left: 0;
+  }
+
+  // add spacing to dropdown text
+  .drop-text {
+    margin-left: .7em;
+  }
+
+  // make dropdown wider
+  .drop-down {
+    width: 180%;
+  }
+
+  // move dropdown menu to adjust to header height change
+  .order1 {
+    top: $nav-height + $nav-height-offset;
+  }
+
+  .order2 {
+    top: ($nav-height * 2) + $nav-height-offset;
+  }
+
+  .order3 {
+    top: ($nav-height * 3) + $nav-height-offset;
+  }
+}
+// End header config
