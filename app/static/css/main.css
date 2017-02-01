@@ -8,6 +8,10 @@
   display: flex;
   flex-direction: row; }
 
+body, html {
+  padding: 0;
+  margin: 0; }
+
 button {
   margin: 0;
   padding: 0;
@@ -233,7 +237,7 @@ a {
 
 /* sticky footer and centering */
 .footer-wrapper {
-  flex: 1 0 auto;
+  margin-top: auto;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
   background: white;
   /* Old browsers */
@@ -248,6 +252,7 @@ a {
 
 .footer-position-2 {
   max-width: 75em;
+  width: 100%;
   margin: 0 auto;
   z-index: 10;
   font-family: "Arial Black", Gadget, sans-serif; }
@@ -997,6 +1002,14 @@ i.item-flag-icon {
   margin-bottom: .5em; }
 
 /* End login forms */
+/* Start home page */
+.home-title {
+  text-align: center; }
+
+.home-motto {
+  text-align: center; }
+
+/* End home page */
 .profile-layout {
   max-width: 45em;
   top: 0;
