@@ -1,48 +1,4 @@
-/*\
-Hello and welcome to the EggZlist style sheet. I tried to document most individual things
-as I could. Also, a few notes: I'm utiliaing flexbox for the layouts of pretty much
-the whole site. It is a CSS3 feature and is widly supported for modern browsers.
-In order to be mobile responsive I used media queries and they make the CSS look
-even worse. I'm trying to keep things as organized as I can so I will be doing the
-media queries for each section right underneath that element and not in a media
-queries section. Thanks for reading and good luck.
-*/
-
-/* default flexbox column */
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-/* default flexbox row */
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-/* this is for the sticky footer */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-/* padding-top pushes all content down to compensate for the fixed header */
-body {
-  display: flex;
-  /*min-height: 100vh;*/
-  flex-direction: column;
-  font-size: 100%;
-  padding-top: 3.5em;
-  background-color: #EEEEEE;
-  margin: 0 0 100px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,afafaf+100 */
-  /*background: rgb(252,252,252); /* Old browsers */
-  /*background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(175,175,175,1) 100%); /* FF3.6-15 */
-  /*background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(175,175,175,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  /*background: linear-gradient(to bottom, rgba(252,252,252,1) 0%,rgba(175,175,175,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#afafaf',GradientType=0 ); /* IE6-9 */
-}
-
+// come back to this and comment it 
 button{
   margin      : 0;
   padding     : 0;
@@ -53,6 +9,7 @@ button{
   cursor      : pointer;
 }
 
+// stops links from being underlined
 ul {
   list-style-type: none;
 }

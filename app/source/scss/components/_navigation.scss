@@ -1,3 +1,13 @@
+// Header Variables
+
+// defines the height of the header and is used for 
+//    offset placement
+$nav-height: 2.5em;
+
+// Nav gets stacked in column around 600px. This adjusts 
+//    to the amount of offset
+$nav-height-offset: .5em;
+
 // Custom Icon 
 /* Creates the cutom EggZlist logo. Generated from iconmoon.io */
 @font-face {

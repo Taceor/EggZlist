@@ -1,3 +1,21 @@
+/* this is for the sticky footer */
+html {
+  position: relative;
+  height: 100%;
+}
+
+// sets font size to 100% for em value reference
+body {
+  font-size: 100%;
+  // padding is to offset for fixed header
+  padding-top: $nav-height;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  // background color for whole site
+  background-color: #EEEEEE;
+}
+
 .main-layout {
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,11 +1,3 @@
-/*Hello and welcome to the EggZlist style sheet. I tried to document most individual things
-as I could. Also, a few notes: I'm utiliaing flexbox for the layouts of pretty much
-the whole site. It is a CSS3 feature and is widly supported for modern browsers.
-In order to be mobile responsive I used media queries and they make the CSS look
-even worse. I'm trying to keep things as organized as I can so I will be doing the
-media queries for each section right underneath that element and not in a media
-queries section. Thanks for reading and good luck.
-*/
 /* default flexbox column */
 .column {
   display: flex;
@@ -15,27 +7,6 @@ queries section. Thanks for reading and good luck.
 .row {
   display: flex;
   flex-direction: row; }
-
-/* this is for the sticky footer */
-html {
-  position: relative;
-  min-height: 100%; }
-
-/* padding-top pushes all content down to compensate for the fixed header */
-body {
-  display: flex;
-  /*min-height: 100vh;*/
-  flex-direction: column;
-  font-size: 100%;
-  padding-top: 3.5em;
-  background-color: #EEEEEE;
-  margin: 0 0 100px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,afafaf+100 */
-  /*background: rgb(252,252,252); /* Old browsers */
-  /*background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(175,175,175,1) 100%); /* FF3.6-15 */
-  /*background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(175,175,175,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  /*background: linear-gradient(to bottom, rgba(252,252,252,1) 0%,rgba(175,175,175,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#afafaf',GradientType=0 ); /* IE6-9 */ }
 
 button {
   margin: 0;
@@ -262,13 +233,7 @@ a {
 
 /* sticky footer and centering */
 .footer-wrapper {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 2.5em;
-  margin: 0 auto;
+  flex: 1 0 auto;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
   background: white;
   /* Old browsers */
@@ -282,13 +247,7 @@ a {
   /* IE6-9 */ }
 
 .footer-position-2 {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
   max-width: 75em;
-  width: 100%;
   margin: 0 auto;
   z-index: 10;
   font-family: "Arial Black", Gadget, sans-serif; }
@@ -335,8 +294,35 @@ a {
 .facebook-icon:hover {
   color: #3b5998; }
 
+/* this is for the sticky footer */
+html {
+  position: relative;
+  height: 100%; }
+
+body {
+  font-size: 100%;
+  padding-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: #EEEEEE; }
+
 .main-layout {
   font-family: Arial, Helvetica, sans-serif; }
+
+.buy-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
+.listing-layout {
+  max-width: 50em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
 
 /* start buy section */
 .row.buy {
@@ -645,6 +631,13 @@ a {
     align-items: center; } }
 
 /* end buy section */
+.sell-layout {
+  max-width: 25em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
 /* start sell forms (posting) */
 .row.options {
   justify-content: space-around; }
@@ -948,6 +941,13 @@ i.item-flag-icon {
   margin: .2em 0 0 0; }
 
 /* END Item 1 */
+.login-layout {
+  max-width: 25em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+
 /* Start login forms */
 .login-container {
   margin-top: .3em;
@@ -997,35 +997,6 @@ i.item-flag-icon {
   margin-bottom: .5em; }
 
 /* End login forms */
-/* start main body */
-.login-layout {
-  max-width: 25em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.buy-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.sell-layout {
-  max-width: 25em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-.listing-layout {
-  max-width: 50em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
 .profile-layout {
   max-width: 45em;
   top: 0;
@@ -1033,33 +1004,6 @@ i.item-flag-icon {
   right: 0;
   margin: 0 auto; }
 
-.settings-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-top: 1em; }
-
-.about-layout {
-  max-width: 45em;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto; }
-
-h1.welcome {
-  text-align: center; }
-
-/* end main body */
-/* Start home page */
-.home-title {
-  text-align: center; }
-
-.home-motto {
-  text-align: center; }
-
-/* End home page */
 /* Start Profile page */
 .profile-listing {
   display: flex;
@@ -1090,6 +1034,14 @@ h1.welcome {
   flex-direction: column; }
 
 /* End profile poge */
+.settings-layout {
+  max-width: 45em;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 1em; }
+
 /* Start settings page */
 .delete-account {
   margin-top: .5em;
@@ -1100,13 +1052,3 @@ h1.welcome {
   margin-bottom: .5em; }
 
 /* End settings page */
-/* Start about page */
-.about-position {
-  margin-top: 1em;
-  margin-left: .4em;
-  margin-right: .4em;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-/* End about page */
