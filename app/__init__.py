@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask_debugtoolbar import DebugToolbarExtension
 import flask_resize
 import flask_whooshalchemy as whooshalchemy
 from .views.home import home
@@ -49,6 +50,8 @@ def create_app(config_file):
 
     from app.models import Item
     whooshalchemy.whoosh_index(app, Item)
+
+    toolbar = DebugToolbarExtension(app)
 
     return app
 
